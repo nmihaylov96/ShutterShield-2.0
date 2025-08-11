@@ -1,0 +1,256 @@
+{
+  "bg": {
+    "navigation": {
+      "home": "Начало",
+      "products": "Продукти",
+      "sectional": "Секционни гаражни врати",
+      "roller": "Ролетни гаражни врати",
+      "berry": "Гаражни врати Berry",
+      "services": "Услуги",
+      "about": "За нас",
+      "contact": "Контакти",
+      "freeQuote": "Безплатна оферта"
+    },
+    "hero": {
+      "title": "Най-добрите Гаражни Врати",
+      "subtitle": "Професионален монтаж и сервиз на гаражни врати Hörmann. Сертифицирани специалисти с над 15 години опит.",
+      "learnMore": "Научете повече",
+      "callUs": "Обадете се",
+      "stats": {
+        "experience": "години опит",
+        "doors": "монтирани врати",
+        "support": "техническа поддръжка",
+        "clients": "доволни клиенти"
+      }
+    },
+    "products": {
+      "title": "Нашите Продукти",
+      "subtitle": "Предлагаме широка гама от висококачествени гаражни врати Hörmann, подходящи за всяко приложение",
+      "sectional": {
+        "title": "Секционни Гаражни Врати",
+        "description": "Най-популярният избор за жилищни гаражи. Отлична топлоизолация и много дизайнерски възможности.",
+        "features": ["Отлична топлоизолация", "Тихо отваряне", "Автоматизация"],
+        "price": "от 3,200 лв."
+      },
+      "roller": {
+        "title": "Ролетни Гаражни Врати",
+        "description": "Компактно решение, идеално за ограничено пространство. Надеждни и лесни за поддържане.",
+        "features": ["Пестене на място", "Лесна поддръжка", "Защита от взлом"],
+        "price": "от 2,800 лв."
+      },
+      "berry": {
+        "title": "Гаражни Врати Berry",
+        "description": "Стилни врати с уникален дизайн. Перфектно съчетание на естетика и функционалност.",
+        "features": ["Уникален дизайн", "Висока устойчивост", "Богата цветова гама"],
+        "price": "от 3,800 лв."
+      },
+      "learnMore": "Повече info",
+      "gallery": "Нашите Реализации"
+    },
+    "services": {
+      "title": "Нашите Услуги",
+      "subtitle": "Пълен спектър от услуги - от консултация до монтаж и сервиз",
+      "installation": {
+        "title": "Професионален Монтаж",
+        "description": "Сертифицирани техници с дългогодишен опит"
+      },
+      "maintenance": {
+        "title": "Техническо Обслужване",
+        "description": "24/7 аварийна поддръжка и редовни прегледи"
+      },
+      "warranty": {
+        "title": "Гаранция",
+        "description": "Пълна гаранция на продукти и услуги"
+      },
+      "consultation": {
+        "title": "Консултация",
+        "description": "Безплатна консултация и оглед на място"
+      },
+      "certification": {
+        "title": "Сертифицирани от Hörmann",
+        "subtitle": "Ние сме официален партньор на Hörmann за България. Това гарантира най-високото качество на монтаж и сервиз.",
+        "features": ["Сертифициран монтаж", "Оригинални части", "Обучен персонал", "Гаранция 5 години"]
+      }
+    },
+    "about": {
+      "title": "За Delice Garage",
+      "description": "С над 15 години опит в индустрията, Delice Garage е водещ доставчик на високококачествени гаражни врати в България. Като сертифициран партньор на Hörmann, ние предлагаме най-добрите продукти и услуги на пазара.",
+      "team": "Нашият екип от сертифицирани специалисти е обучен да предоставя професионален монтаж и поддръжка, гарантирайки дълготрайна и безпроблемна работа на вратите Ви.",
+      "stats": {
+        "doors": "Инсталирани врати",
+        "experience": "Години опит",
+        "customers": "Доволни клиенти",
+        "support": "Поддръжка"
+      }
+    },
+    "contact": {
+      "title": "Свържете се с нас",
+      "subtitle": "Готови сме да отговорим на всички Ваши въпроси",
+      "info": "Информация за контакт",
+      "address": "Адрес",
+      "phone": "Телефон",
+      "workingHours": "Работно време",
+      "schedule": "Понеделник - Петък: 8:00 - 18:00\nСъбота: 9:00 - 14:00\nНеделя: Почивен ден",
+      "form": {
+        "title": "Изпратете заявка",
+        "name": "Име",
+        "namePlaceholder": "Вашето име",
+        "phone": "Телефон",
+        "email": "Email",
+        "service": "Услуга",
+        "selectService": "Изберете услуга",
+        "services": {
+          "sectional": "Секционни гаражни врати",
+          "roller": "Ролетни гаражни врати",
+          "berry": "Гаражни врати Berry",
+          "service": "Сервиз и поддръжка",
+          "consultation": "Консултация"
+        },
+        "message": "Съобщение",
+        "messagePlaceholder": "Опишете Вашите нужди...",
+        "submit": "Изпрати заявка"
+      }
+    },
+    "footer": {
+      "tagline": "Вашият надежден партньор за гаражни врати и автоматизация",
+      "products": "Продукти",
+      "sectionalShort": "Секционни врати",
+      "rollerShort": "Ролетни врати",
+      "berryShort": "Врати Berry",
+      "services": "Услуги",
+      "installation": "Монтаж",
+      "service": "Сервиз",
+      "consultation": "Консултация",
+      "warranty": "Гаранция",
+      "contact": "Контакти",
+      "copyright": "Всички права запазени."
+    }
+  },
+  "en": {
+    "navigation": {
+      "home": "Home",
+      "products": "Products",
+      "sectional": "Sectional garage doors",
+      "roller": "Roller garage doors",
+      "berry": "Berry garage doors",
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact",
+      "freeQuote": "Free Quote"
+    },
+    "hero": {
+      "title": "Best Garage Doors",
+      "subtitle": "Professional installation and service of Hörmann garage doors. Certified specialists with over 15 years of experience.",
+      "learnMore": "Learn More",
+      "callUs": "Call Us",
+      "stats": {
+        "experience": "years experience",
+        "doors": "installed doors",
+        "support": "technical support",
+        "clients": "satisfied clients"
+      }
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": "We offer a wide range of high-quality Hörmann garage doors suitable for any application",
+      "sectional": {
+        "title": "Sectional Garage Doors",
+        "description": "The most popular choice for residential garages. Excellent thermal insulation and many design options.",
+        "features": ["Excellent thermal insulation", "Quiet operation", "Automation ready"],
+        "price": "from 3,200 BGN"
+      },
+      "roller": {
+        "title": "Roller Garage Doors",
+        "description": "Compact solution, ideal for limited space. Reliable and easy to maintain.",
+        "features": ["Space saving", "Easy maintenance", "Security protection"],
+        "price": "from 2,800 BGN"
+      },
+      "berry": {
+        "title": "Berry-Type Garage Doors",
+        "description": "Stylish doors with unique design. Perfect combination of aesthetics and functionality.",
+        "features": ["Unique design", "High durability", "Rich color range"],
+        "price": "from 3,800 BGN"
+      },
+      "learnMore": "Learn More",
+      "gallery": "Our Projects"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Complete range of services - from consultation to installation and maintenance",
+      "installation": {
+        "title": "Professional Installation",
+        "description": "Certified technicians with years of experience"
+      },
+      "maintenance": {
+        "title": "Technical Service",
+        "description": "24/7 emergency support and regular inspections"
+      },
+      "warranty": {
+        "title": "Warranty",
+        "description": "Complete warranty on products and services"
+      },
+      "consultation": {
+        "title": "Consultation",
+        "description": "Free consultation and on-site inspection"
+      },
+      "certification": {
+        "title": "Certified by Hörmann",
+        "subtitle": "We are an official Hörmann partner for Bulgaria. This guarantees the highest quality of installation and service.",
+        "features": ["Certified installation", "Original parts", "Trained staff", "5-year warranty"]
+      }
+    },
+    "about": {
+      "title": "About Delice Garage",
+      "description": "With over 15 years of experience in the industry, Delice Garage is a leading provider of high-quality garage doors in Bulgaria. As a certified Hörmann partner, we offer the best products and services on the market.",
+      "team": "Our team of certified specialists is trained to provide professional installation and maintenance, ensuring long-lasting and trouble-free operation of your doors.",
+      "stats": {
+        "doors": "Installed doors",
+        "experience": "Years experience",
+        "customers": "Satisfied customers",
+        "support": "Support"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "We're ready to answer all your questions",
+      "info": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "workingHours": "Working Hours",
+      "schedule": "Monday - Friday: 8:00 - 18:00\nSaturday: 9:00 - 14:00\nSunday: Closed",
+      "form": {
+        "title": "Send Request",
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "phone": "Phone",
+        "email": "Email",
+        "service": "Service",
+        "selectService": "Select service",
+        "services": {
+          "sectional": "Sectional garage doors",
+          "roller": "Roller garage doors",
+          "berry": "Berry garage doors",
+          "service": "Service & maintenance",
+          "consultation": "Consultation"
+        },
+        "message": "Message",
+        "messagePlaceholder": "Describe your needs...",
+        "submit": "Send Request"
+      }
+    },
+    "footer": {
+      "tagline": "Your reliable partner for garage doors and automation",
+      "products": "Products",
+      "sectionalShort": "Sectional doors",
+      "rollerShort": "Roller doors",
+      "berryShort": "Berry doors",
+      "services": "Services",
+      "installation": "Installation",
+      "service": "Service",
+      "consultation": "Consultation",
+      "warranty": "Warranty",
+      "contact": "Contact",
+      "copyright": "All rights reserved."
+    }
+  }
+}
