@@ -8,6 +8,9 @@ import Home from "@/pages/home";
 import SectionalDoors from "@/pages/sectional-doors";
 import RollerDoors from "@/pages/roller-doors";
 import BerryDoors from "@/pages/berry-doors";
+import Services from "@/pages/services";
+import About from "@/pages/about";
+import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -17,6 +20,9 @@ function Router() {
       <Route path="/sectional-doors" component={SectionalDoors} />
       <Route path="/roller-doors" component={RollerDoors} />
       <Route path="/berry-doors" component={BerryDoors} />
+      <Route path="/services" component={Services} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );

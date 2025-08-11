@@ -77,21 +77,21 @@ export function Navigation() {
               </div>
               
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => setLocation('/services')}
                 className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
               >
                 {t.navigation.services}
               </button>
               
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => setLocation('/about')}
                 className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
               >
                 {t.navigation.about}
               </button>
               
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => setLocation('/contact')}
                 className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
               >
                 {t.navigation.contact}
@@ -144,7 +144,7 @@ export function Navigation() {
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
-              onClick={() => scrollToSection('home')}
+              onClick={() => setLocation('/')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
             >
               {t.navigation.home}
@@ -168,19 +168,19 @@ export function Navigation() {
               {t.navigation.berry}
             </button>
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => setLocation('/services')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
             >
               {t.navigation.services}
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => setLocation('/about')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
             >
               {t.navigation.about}
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => setLocation('/contact')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
             >
               {t.navigation.contact}
