@@ -17,14 +17,16 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-dark-navy text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="text-2xl font-bold text-white mb-4">
-              <span className="mr-2 text-yellow-accent">🚪</span>
-              Delice Garage
+            <div className="flex items-center text-2xl font-bold text-white mb-4">
+              <div className="w-8 h-8 bg-primary-blue flex items-center justify-center mr-3">
+                <span className="text-white font-bold text-lg">G</span>
+              </div>
+              Garage
             </div>
             <p className="text-gray-400 mb-4">
               {t.footer.tagline}

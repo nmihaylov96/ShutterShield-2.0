@@ -59,13 +59,16 @@ export function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={index} className="text-center p-6">
-              <div className="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card key={index} className="text-center p-8 hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-lg">
+              <div className="w-16 h-16 bg-primary-blue flex items-center justify-center mx-auto mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+              <p className="text-gray-600 mb-6">{service.description}</p>
+              <button className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium transition-colors">
+                Read More →
+              </button>
+            </Card>
           ))}
         </div>
 

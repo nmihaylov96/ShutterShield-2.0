@@ -29,14 +29,15 @@
   --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
   --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
   
-  /* Custom colors for garage door company */
-  --primary-blue: hsl(217.2, 91.2%, 59.8%);
-  --secondary-blue: hsl(217.2, 85%, 40%);
-  --accent-blue: hsl(217.2, 80%, 65%);
+  /* Custom colors for garage door company - Industrial style */
+  --primary-blue: hsl(220, 50%, 25%);
+  --secondary-blue: hsl(220, 55%, 35%);
+  --accent-blue: hsl(220, 60%, 45%);
+  --dark-navy: hsl(220, 40%, 15%);
   --yellow-accent: hsl(42.0290, 92.8251%, 56.2745%);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --radius: 0.5rem;
+  --radius: 0rem;
 }
 
 .dark {
@@ -107,6 +108,14 @@
 
 .bg-yellow-accent {
   background-color: var(--yellow-accent);
+}
+
+.dark-navy {
+  color: var(--dark-navy);
+}
+
+.bg-dark-navy {
+  background-color: var(--dark-navy);
 }
 
 /* Smooth transitions */

@@ -18,7 +18,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative bg-gradient-to-r from-primary-blue to-secondary-blue text-white overflow-hidden">
+    <section id="home" className="relative bg-gradient-to-r from-dark-navy to-primary-blue text-white overflow-hidden">
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -38,7 +38,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               onClick={() => scrollToSection('contact')}
-              className="bg-yellow-accent text-gray-900 px-8 py-4 hover:bg-yellow-500 font-semibold text-lg h-auto"
+              className="bg-primary-blue text-white px-8 py-4 hover:bg-secondary-blue font-semibold text-lg h-auto"
             >
               {t.hero.learnMore}
             </Button>
