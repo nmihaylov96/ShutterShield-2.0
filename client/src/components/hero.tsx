@@ -67,7 +67,7 @@ export function Hero() {
               <div className="text-sm text-gray-600">{t.hero.stats.doors}</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-primary-blue mb-1">24/7</div>
+              <div className="text-2xl font-bold text-primary-blue mb-1">10+</div>
               <div className="text-sm text-gray-600">{t.hero.stats.support}</div>
             </div>
             <div className="flex flex-col items-center">

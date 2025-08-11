@@ -19,7 +19,7 @@
       "stats": {
         "experience": "години опит",
         "doors": "монтирани врати",
-        "support": "техническа поддръжка",
+        "support": "сертифицирани специалисти",
         "clients": "доволни клиенти"
       }
     },
@@ -29,20 +29,17 @@
       "sectional": {
         "title": "Секционни Гаражни Врати",
         "description": "Най-популярният избор за жилищни гаражи. Отлична топлоизолация и много дизайнерски възможности.",
-        "features": ["Отлична топлоизолация", "Тихо отваряне", "Автоматизация"],
-        "price": "от 3,200 лв."
+        "features": ["Отлична топлоизолация", "Тихо отваряне", "Автоматизация"]
       },
       "roller": {
         "title": "Ролетни Гаражни Врати",
         "description": "Компактно решение, идеално за ограничено пространство. Надеждни и лесни за поддържане.",
-        "features": ["Пестене на място", "Лесна поддръжка", "Защита от взлом"],
-        "price": "от 2,800 лв."
+        "features": ["Пестене на място", "Лесна поддръжка", "Защита от взлом"]
       },
       "berry": {
         "title": "Гаражни Врати Berry",
         "description": "Стилни врати с уникален дизайн. Перфектно съчетание на естетика и функционалност.",
-        "features": ["Уникален дизайн", "Висока устойчивост", "Богата цветова гама"],
-        "price": "от 3,800 лв."
+        "features": ["Уникален дизайн", "Висока устойчивост", "Богата цветова гама"]
       },
       "learnMore": "Повече info",
       "gallery": "Нашите Реализации"
@@ -56,7 +53,7 @@
       },
       "maintenance": {
         "title": "Техническо Обслужване",
-        "description": "24/7 аварийна поддръжка и редовни прегледи"
+        "description": "Аварийна поддръжка и редовни прегледи"
       },
       "warranty": {
         "title": "Гаранция",
@@ -146,7 +143,7 @@
       "stats": {
         "experience": "years experience",
         "doors": "installed doors",
-        "support": "technical support",
+        "support": "certified specialists",
         "clients": "satisfied clients"
       }
     },
@@ -156,20 +153,17 @@
       "sectional": {
         "title": "Sectional Garage Doors",
         "description": "The most popular choice for residential garages. Excellent thermal insulation and many design options.",
-        "features": ["Excellent thermal insulation", "Quiet operation", "Automation ready"],
-        "price": "from 3,200 BGN"
+        "features": ["Excellent thermal insulation", "Quiet operation", "Automation ready"]
       },
       "roller": {
         "title": "Roller Garage Doors",
         "description": "Compact solution, ideal for limited space. Reliable and easy to maintain.",
-        "features": ["Space saving", "Easy maintenance", "Security protection"],
-        "price": "from 2,800 BGN"
+        "features": ["Space saving", "Easy maintenance", "Security protection"]
       },
       "berry": {
         "title": "Berry-Type Garage Doors",
         "description": "Stylish doors with unique design. Perfect combination of aesthetics and functionality.",
-        "features": ["Unique design", "High durability", "Rich color range"],
-        "price": "from 3,800 BGN"
+        "features": ["Unique design", "High durability", "Rich color range"]
       },
       "learnMore": "Learn More",
       "gallery": "Our Projects"
@@ -183,7 +177,7 @@
       },
       "maintenance": {
         "title": "Technical Service",
-        "description": "24/7 emergency support and regular inspections"
+        "description": "Emergency support and regular inspections"
       },
       "warranty": {
         "title": "Warranty",

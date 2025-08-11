@@ -2,9 +2,11 @@ import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 export function Products() {
   const { t } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -80,9 +82,8 @@ export function Products() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-primary-blue">{t.products.sectional.price}</span>
-                <Button onClick={scrollToContact} className="bg-primary-blue hover:bg-secondary-blue">
+              <div className="flex justify-end">
+                <Button onClick={() => setLocation('/sectional-doors')} className="bg-primary-blue hover:bg-secondary-blue">
                   {t.products.learnMore}
                 </Button>
               </div>
@@ -109,9 +110,8 @@ export function Products() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-primary-blue">{t.products.roller.price}</span>
-                <Button onClick={scrollToContact} className="bg-primary-blue hover:bg-secondary-blue">
+              <div className="flex justify-end">
+                <Button onClick={() => setLocation('/roller-doors')} className="bg-primary-blue hover:bg-secondary-blue">
                   {t.products.learnMore}
                 </Button>
               </div>
@@ -138,9 +138,8 @@ export function Products() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-primary-blue">{t.products.berry.price}</span>
-                <Button onClick={scrollToContact} className="bg-primary-blue hover:bg-secondary-blue">
+              <div className="flex justify-end">
+                <Button onClick={() => setLocation('/berry-doors')} className="bg-primary-blue hover:bg-secondary-blue">
                   {t.products.learnMore}
                 </Button>
               </div>

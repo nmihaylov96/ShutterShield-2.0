@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'wouter';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,10 +28,13 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="text-2xl font-bold text-primary-blue">
+            <button 
+              onClick={() => setLocation('/')}
+              className="text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
+            >
               <span className="mr-2">🚪</span>
               Delice Garage
-            </div>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
@@ -50,19 +55,19 @@ export function Navigation() {
                 <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-2">
                     <button
-                      onClick={() => scrollToSection('sectional')}
+                      onClick={() => setLocation('/sectional-doors')}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue"
                     >
                       {t.navigation.sectional}
                     </button>
                     <button
-                      onClick={() => scrollToSection('roller')}
+                      onClick={() => setLocation('/roller-doors')}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue"
                     >
                       {t.navigation.roller}
                     </button>
                     <button
-                      onClick={() => scrollToSection('berry')}
+                      onClick={() => setLocation('/berry-doors')}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue"
                     >
                       {t.navigation.berry}
@@ -145,19 +150,19 @@ export function Navigation() {
               {t.navigation.home}
             </button>
             <button
-              onClick={() => scrollToSection('sectional')}
+              onClick={() => setLocation('/sectional-doors')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue"
             >
               {t.navigation.sectional}
             </button>
             <button
-              onClick={() => scrollToSection('roller')}
+              onClick={() => setLocation('/roller-doors')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue"
             >
               {t.navigation.roller}
             </button>
             <button
-              onClick={() => scrollToSection('berry')}
+              onClick={() => setLocation('/berry-doors')}
               className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue"
             >
               {t.navigation.berry}
