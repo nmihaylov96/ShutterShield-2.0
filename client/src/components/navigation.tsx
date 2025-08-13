@@ -39,7 +39,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="shadow-lg sticky top-0 z-50" style={{ backgroundColor: '#34343E' }}>
+    <nav className="shadow-lg sticky top-0 z-50" style={{ backgroundColor: '#2D2D37' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -74,12 +74,12 @@ export function Navigation() {
                   {t.navigation.products}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" style={{ backgroundColor: '#2c2c36' }}>
+                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" style={{ backgroundColor: '#25252f' }}>
                   <div className="py-2">
                     <button
                       onClick={() => setLocation('/sectional-doors')}
                       className="block w-full text-left px-4 py-2 text-sm text-white hover:text-blue-300 transition-colors"
-                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#24242e'}
+                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#1d1d27'}
                       onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
                     >
                       {t.navigation.sectional}
@@ -87,7 +87,7 @@ export function Navigation() {
                     <button
                       onClick={() => setLocation('/roller-doors')}
                       className="block w-full text-left px-4 py-2 text-sm text-white hover:text-blue-300 transition-colors"
-                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#24242e'}
+                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#1d1d27'}
                       onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
                     >
                       {t.navigation.roller}
@@ -95,7 +95,7 @@ export function Navigation() {
                     <button
                       onClick={() => setLocation('/berry-doors')}
                       className="block w-full text-left px-4 py-2 text-sm text-white hover:text-blue-300 transition-colors"
-                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#24242e'}
+                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#1d1d27'}
                       onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
                     >
                       {t.navigation.berry}
@@ -169,7 +169,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-600" style={{ backgroundColor: '#34343E' }}>
+        <div className="md:hidden border-t border-slate-600" style={{ backgroundColor: '#2D2D37' }}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
               onClick={() => setLocation('/')}
