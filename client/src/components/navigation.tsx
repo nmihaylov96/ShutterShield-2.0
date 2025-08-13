@@ -61,7 +61,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <div className="ml-6 flex items-baseline space-x-8">
               <button
-                onClick={() => scrollToSection('home')}
+                onClick={() => setLocation('/')}
                 className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {t.navigation.home}
@@ -163,43 +163,64 @@ export function Navigation() {
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
-              onClick={() => setLocation('/')}
+              onClick={() => {
+                setLocation('/');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.home}
             </button>
             <button
-              onClick={() => setLocation('/sectional-doors')}
+              onClick={() => {
+                setLocation('/sectional-doors');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               {t.navigation.sectional}
             </button>
             <button
-              onClick={() => setLocation('/roller-doors')}
+              onClick={() => {
+                setLocation('/roller-doors');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               {t.navigation.roller}
             </button>
             <button
-              onClick={() => setLocation('/berry-doors')}
+              onClick={() => {
+                setLocation('/berry-doors');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               {t.navigation.berry}
             </button>
             <button
-              onClick={() => setLocation('/services')}
+              onClick={() => {
+                setLocation('/services');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.services}
             </button>
             <button
-              onClick={() => setLocation('/about')}
+              onClick={() => {
+                setLocation('/about');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.about}
             </button>
             <button
-              onClick={() => setLocation('/contact')}
+              onClick={() => {
+                setLocation('/contact');
+                setMobileMenuOpen(false);
+              }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.contact}

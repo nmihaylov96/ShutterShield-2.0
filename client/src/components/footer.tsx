@@ -1,20 +1,11 @@
 import { useLanguage } from '@/contexts/language-context';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 export function Footer() {
   const { t } = useLanguage();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const [, setLocation] = useLocation();
 
   return (
     <footer className="bg-dark-navy text-white py-16">
@@ -24,9 +15,9 @@ export function Footer() {
           <div>
             <div className="flex items-center text-2xl font-bold text-white mb-4">
               <div className="w-8 h-8 bg-primary-blue flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-lg">G</span>
+                <span className="text-white font-bold text-lg">R</span>
               </div>
-              Garage
+              RollTech
             </div>
             <p className="text-gray-400 mb-4">
               {t.footer.tagline}
@@ -50,7 +41,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => scrollToSection('sectional')}
+                  onClick={() => setLocation('/sectional-doors')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.sectionalShort}
@@ -58,7 +49,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('roller')}
+                  onClick={() => setLocation('/roller-doors')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.rollerShort}
@@ -66,7 +57,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('berry')}
+                  onClick={() => setLocation('/berry-doors')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.berryShort}
@@ -81,7 +72,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => setLocation('/services')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.installation}
@@ -89,7 +80,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => setLocation('/services')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.service}
@@ -97,7 +88,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => setLocation('/services')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.consultation}
@@ -105,7 +96,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => setLocation('/services')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t.footer.warranty}
@@ -128,7 +119,7 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <span className="mr-2">✉️</span>
-                <a href="mailto:info@delicegarage.bg" className="hover:text-white">info@delicegarage.bg</a>
+                <a href="mailto:info@rolltech.bg" className="hover:text-white">info@rolltech.bg</a>
               </div>
             </div>
           </div>
@@ -136,7 +127,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Delice Garage. {t.footer.copyright}</p>
+          <p>&copy; 2024 RollTech. {t.footer.copyright}</p>
         </div>
       </div>
     </footer>
