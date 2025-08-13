@@ -65,9 +65,11 @@ export function Services() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
               <p className="text-gray-600 text-sm mb-4 leading-relaxed">{service.description}</p>
-              <button className="bg-primary-blue hover:bg-secondary-blue text-white px-4 py-2 text-sm font-medium transition-colors rounded-none border-0">
-                {t.common.readMore} →
-              </button>
+              <div className="text-center">
+                <button className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 text-sm font-medium transition-colors rounded-none border-0">
+                  {t.common.readMore} →
+                </button>
+              </div>
             </Card>
           ))}
         </div>
@@ -105,9 +107,11 @@ export function Services() {
                 </div>
                 <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
                 <p className="text-gray-200 text-sm mb-4 leading-relaxed">{service.description}</p>
-                <button className="border border-white text-white px-4 py-2 text-sm font-medium hover:bg-white hover:text-primary-blue transition-colors rounded-none">
-                  {t.common.learnMore} →
-                </button>
+                <div className="text-center">
+                  <button className="border border-white text-white px-6 py-2 text-sm font-medium hover:bg-white hover:text-primary-blue transition-colors rounded-none">
+                    {t.common.learnMore} →
+                  </button>
+                </div>
               </div>
             ))}
           </div>

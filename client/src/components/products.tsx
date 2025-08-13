@@ -82,8 +82,8 @@ export function Products() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-end">
-                <Button onClick={() => setLocation('/sectional-doors')} className="bg-primary-blue hover:bg-secondary-blue">
+              <div className="text-center">
+                <Button onClick={() => setLocation('/sectional-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
                   {t.products.learnMore}
                 </Button>
               </div>
@@ -110,8 +110,8 @@ export function Products() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-end">
-                <Button onClick={() => setLocation('/roller-doors')} className="bg-primary-blue hover:bg-secondary-blue">
+              <div className="text-center">
+                <Button onClick={() => setLocation('/roller-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
                   {t.products.learnMore}
                 </Button>
               </div>
@@ -138,8 +138,8 @@ export function Products() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-end">
-                <Button onClick={() => setLocation('/berry-doors')} className="bg-primary-blue hover:bg-secondary-blue">
+              <div className="text-center">
+                <Button onClick={() => setLocation('/berry-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
                   {t.products.learnMore}
                 </Button>
               </div>
