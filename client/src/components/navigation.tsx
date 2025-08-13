@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
-import logoPath from '@assets/A modern, minimalist logo design for a company specializing in roller garage shutters.  The logo should feature a stylized image of a roller shutter, perhaps represented by clean lines and geometric shapes, in shad_1755074071371.jpg';
+import logoPath from '@assets/68fde6ec-14c5-4187-95b5-bb0eb8c1b9a4_removalai_preview_1755074482926.png';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,7 +56,7 @@ export function Navigation() {
                 <img 
                   src={logoPath} 
                   alt="Ролтех Logo" 
-                  className="h-10 w-auto object-contain"
+                  className="h-14 w-auto object-contain"
                 />
                 <span>Ролтех</span>
               </button>
