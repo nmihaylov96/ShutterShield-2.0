@@ -78,8 +78,8 @@
       }
     },
     "about": {
-      "title": "За Delice Garage",
-      "description": "С над 15 години опит в индустрията, Delice Garage е водещ доставчик на високококачествени гаражни врати в България. Като сертифициран партньор на Hörmann, ние предлагаме най-добрите продукти и услуги на пазара.",
+      "title": "За Ролтех",
+      "description": "С над 15 години опит в индустрията, Ролтех е водещ доставчик на високококачествени гаражни врати в България. Като сертифициран партньор на Hörmann, ние предлагаме най-добрите продукти и услуги на пазара.",
       "team": "Нашият екип от сертифицирани специалисти е обучен да предоставя професионален монтаж и поддръжка, гарантирайки дълготрайна и безпроблемна работа на вратите Ви.",
       "stats": {
         "doors": "Инсталирани врати",
@@ -117,7 +117,7 @@
       }
     },
     "footer": {
-      "tagline": "Вашият надежден партньор за гаражни врати и автоматизация",
+      "tagline": "Ролтех - Вашият надежден партньор за гаражни врати",
       "products": "Продукти",
       "sectionalShort": "Секционни врати",
       "rollerShort": "Ролетни врати",
@@ -128,7 +128,7 @@
       "consultation": "Консултация",
       "warranty": "Гаранция",
       "contact": "Контакти",
-      "copyright": "Всички права запазени."
+      "copyright": "© 2024 Ролтех. Всички права запазени."
     },
     "common": {
       "readMore": "Виж още",
@@ -214,8 +214,8 @@
       }
     },
     "about": {
-      "title": "About Delice Garage",
-      "description": "With over 15 years of experience in the industry, Delice Garage is a leading provider of high-quality garage doors in Bulgaria. As a certified Hörmann partner, we offer the best products and services on the market.",
+      "title": "About Roltech",
+      "description": "With over 15 years of experience in the industry, Roltech is a leading provider of high-quality garage doors in Bulgaria. As a certified Hörmann partner, we offer the best products and services on the market.",
       "team": "Our team of certified specialists is trained to provide professional installation and maintenance, ensuring long-lasting and trouble-free operation of your doors.",
       "stats": {
         "doors": "Installed doors",
@@ -253,7 +253,7 @@
       }
     },
     "footer": {
-      "tagline": "Your reliable partner for garage doors and automation",
+      "tagline": "Roltech - Your reliable partner for garage doors",
       "products": "Products",
       "sectionalShort": "Sectional doors",
       "rollerShort": "Roller doors",
@@ -264,7 +264,7 @@
       "consultation": "Consultation",
       "warranty": "Warranty",
       "contact": "Contact",
-      "copyright": "All rights reserved."
+      "copyright": "© 2024 Roltech. All rights reserved."
     },
     "common": {
       "readMore": "Read More",

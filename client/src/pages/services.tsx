@@ -77,7 +77,7 @@ export default function Services() {
           <Button
             variant="outline"
             onClick={() => setLocation('/')}
-            className="mb-8 border-white text-white hover:bg-white hover:text-primary-blue"
+            className="mb-8 border-white text-white bg-transparent hover:bg-white hover:text-primary-blue rounded-none"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Назад
@@ -89,6 +89,22 @@ export default function Services() {
             <p className="text-xl text-gray-200 mb-8">
               {t.services.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={scrollToContact}
+                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold rounded-none"
+              >
+                Поискайте оферта
+              </Button>
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold rounded-none"
+                onClick={() => window.open('tel:+359888123456', '_self')}
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                {t.hero.callUs}
+              </Button>
+            </div>
           </div>
         </div>
       </section>

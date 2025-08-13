@@ -1,8 +1,8 @@
-# Delice Garage - Garage Door Company Website
+# Ролтех - Garage Door Company Website
 
-## Overview
+## Overview  
 
-This is a modern, multilingual business website for Delice Garage, a garage door company specializing in Hörmann garage doors. The application is built as a full-stack web solution with a React frontend and Express backend, featuring a professional design, contact form functionality, and bilingual support (Bulgarian and English). The website serves as a marketing platform showcasing different types of garage doors (sectional, roller, and Berry doors) along with company services, about information, and contact capabilities.
+This is a modern, multilingual business website for Ролтех (Roltech), a garage door company specializing in Hörmann garage doors. The application is built as a full-stack web solution with a React frontend and Express backend, featuring a professional design, contact form functionality, and bilingual support (Bulgarian and English). The website serves as a marketing platform showcasing different types of garage doors (sectional, roller, and Berry doors) along with company services, about information, and contact capabilities.
 
 ## User Preferences
 

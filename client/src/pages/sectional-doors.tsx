@@ -61,13 +61,13 @@ export default function SectionalDoors() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={scrollToContact}
-                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold"
+                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold rounded-none"
               >
                 Поискайте оферта
               </Button>
               <Button
                 variant="outline"
-                className="border-2 border-white text-white px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold"
+                className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold rounded-none"
                 onClick={() => window.open('tel:+359888123456', '_self')}
               >
                 <Phone className="mr-2 h-5 w-5" />

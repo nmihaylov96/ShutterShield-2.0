@@ -10,14 +10,18 @@ export function Navigation() {
   const [, setLocation] = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+    if (sectionId === 'home') {
+      setLocation('/');
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerHeight = 80;
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
     }
     setMobileMenuOpen(false);
   };
@@ -28,13 +32,21 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <button 
-              onClick={() => setLocation('/')}
-              className="text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
-            >
-              <span className="mr-2">🚪</span>
-              Delice Garage
-            </button>
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={() => setLocation('/')}
+                className="flex items-center space-x-2 text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
+              >
+                <div className="h-8 w-8 bg-primary-blue rounded-sm flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
+                    <path d="M21 8V6c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v2H2v8h2v4h2v-4h12v4h2v-4h2V8h-1zm-2-2v2H5V6h14zm1 4v6H4v-6h16z"/>
+                    <rect x="6" y="13" width="12" height="1"/>
+                    <rect x="6" y="11" width="12" height="1"/>
+                  </svg>
+                </div>
+                <span>Ролтех</span>
+              </button>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
