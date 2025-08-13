@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
-import logoPath from '@assets/68fde6ec-14c5-4187-95b5-bb0eb8c1b9a4_removalai_preview_1755074482926.png';
+// Using SVG logo for better quality and contrast
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,7 +45,7 @@ export function Navigation() {
         : 'bg-white/90 backdrop-blur-sm shadow-md'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-32">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <div className="flex items-center space-x-2">
@@ -54,9 +54,9 @@ export function Navigation() {
                 className="flex items-center space-x-3 text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
               >
                 <img 
-                  src={logoPath} 
+                  src="/logo.svg" 
                   alt="Ролтех Logo" 
-                  className="h-28 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
                 <span>Ролтех</span>
               </button>
