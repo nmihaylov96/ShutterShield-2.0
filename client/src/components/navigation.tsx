@@ -41,7 +41,7 @@ export function Navigation() {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-28">
+        <div className="flex justify-between items-center" style={{ minHeight: '220px' }}>
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <button 
@@ -51,7 +51,8 @@ export function Navigation() {
               <img 
                 src={logoPath} 
                 alt="RollTech Logo" 
-                className="h-24 w-auto object-contain"
+                className="w-auto object-contain"
+                style={{ height: '200px' }}
               />
             </button>
           </div>
