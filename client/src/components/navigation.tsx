@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
+import logoPath from '@assets/Untitled design (2)_1755076917653.png';
 
 
 export function Navigation() {
@@ -50,9 +51,9 @@ export function Navigation() {
                 className="flex items-center space-x-3 text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
               >
                 <img 
-                  src="/roltech-logo.svg" 
-                  alt="Ролтех Logo" 
-                  className="h-11 w-auto object-contain"
+                  src={logoPath} 
+                  alt="RollTech Logo" 
+                  className="h-12 w-auto object-contain"
                 />
               </button>
             </div>
