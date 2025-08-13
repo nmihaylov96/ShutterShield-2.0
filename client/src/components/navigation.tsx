@@ -39,7 +39,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="shadow-lg sticky top-0 z-50" style={{ backgroundColor: '#2D2D37' }}>
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -47,7 +47,7 @@ export function Navigation() {
             <div className="flex items-center space-x-2">
               <button 
                 onClick={() => setLocation('/')}
-                className="flex items-center space-x-3 text-2xl font-bold text-white hover:text-blue-300 transition-colors"
+                className="flex items-center space-x-3 text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
               >
                 <img 
                   src="/roltech-logo.svg" 
@@ -63,39 +63,33 @@ export function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+                className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {t.navigation.home}
               </button>
               
               <div className="relative group">
-                <button className="text-white hover:text-blue-300 transition-colors duration-200 font-medium flex items-center">
+                <button className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium flex items-center">
                   {t.navigation.products}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" style={{ backgroundColor: '#25252f' }}>
+                <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-200">
                   <div className="py-2">
                     <button
                       onClick={() => setLocation('/sectional-doors')}
-                      className="block w-full text-left px-4 py-2 text-sm text-white hover:text-blue-300 transition-colors"
-                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#1d1d27'}
-                      onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:text-blue-600 hover:bg-gray-50 transition-colors"
                     >
                       {t.navigation.sectional}
                     </button>
                     <button
                       onClick={() => setLocation('/roller-doors')}
-                      className="block w-full text-left px-4 py-2 text-sm text-white hover:text-blue-300 transition-colors"
-                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#1d1d27'}
-                      onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:text-blue-600 hover:bg-gray-50 transition-colors"
                     >
                       {t.navigation.roller}
                     </button>
                     <button
                       onClick={() => setLocation('/berry-doors')}
-                      className="block w-full text-left px-4 py-2 text-sm text-white hover:text-blue-300 transition-colors"
-                      onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#1d1d27'}
-                      onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:text-blue-600 hover:bg-gray-50 transition-colors"
                     >
                       {t.navigation.berry}
                     </button>
@@ -105,21 +99,21 @@ export function Navigation() {
               
               <button
                 onClick={() => setLocation('/services')}
-                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+                className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {t.navigation.services}
               </button>
               
               <button
                 onClick={() => setLocation('/about')}
-                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+                className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {t.navigation.about}
               </button>
               
               <button
                 onClick={() => setLocation('/contact')}
-                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+                className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {t.navigation.contact}
               </button>
@@ -158,7 +152,7 @@ export function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:text-blue-300 focus:outline-none"
+              className="text-gray-800 hover:text-blue-600 focus:outline-none"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -168,47 +162,47 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-600" style={{ backgroundColor: '#2D2D37' }}>
+        <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
               onClick={() => setLocation('/')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.home}
             </button>
             <button
               onClick={() => setLocation('/sectional-doors')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               {t.navigation.sectional}
             </button>
             <button
               onClick={() => setLocation('/roller-doors')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               {t.navigation.roller}
             </button>
             <button
               onClick={() => setLocation('/berry-doors')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               {t.navigation.berry}
             </button>
             <button
               onClick={() => setLocation('/services')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.services}
             </button>
             <button
               onClick={() => setLocation('/about')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.about}
             </button>
             <button
               onClick={() => setLocation('/contact')}
-              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.contact}
             </button>

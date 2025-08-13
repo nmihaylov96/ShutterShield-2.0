@@ -1,22 +1,23 @@
-<svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="120" height="50" rx="8" fill="#2D2D37"/>
-  
+<svg width="160" height="50" viewBox="0 0 160 50" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Icon - Stylized Garage Door -->
-  <g transform="translate(10, 12)">
+  <g transform="translate(8, 10)">
     <!-- Door Frame -->
-    <rect x="0" y="0" width="24" height="26" rx="2" fill="none" stroke="#60A5FA" stroke-width="2"/>
+    <rect x="0" y="0" width="28" height="30" rx="3" fill="none" stroke="#2563EB" stroke-width="2.5"/>
     
     <!-- Horizontal Door Sections -->
-    <line x1="2" y1="6" x2="22" y2="6" stroke="#60A5FA" stroke-width="1.5"/>
-    <line x1="2" y1="12" x2="22" y2="12" stroke="#60A5FA" stroke-width="1.5"/>
-    <line x1="2" y1="18" x2="22" y2="18" stroke="#60A5FA" stroke-width="1.5"/>
+    <line x1="3" y1="7" x2="25" y2="7" stroke="#2563EB" stroke-width="2"/>
+    <line x1="3" y1="14" x2="25" y2="14" stroke="#2563EB" stroke-width="2"/>
+    <line x1="3" y1="21" x2="25" y2="21" stroke="#2563EB" stroke-width="2"/>
     
     <!-- Door Handle -->
-    <circle cx="19" cy="20" r="1.5" fill="#60A5FA"/>
+    <circle cx="22" cy="24" r="2" fill="#2563EB"/>
+    
+    <!-- Small details for realism -->
+    <rect x="1" y="1" width="2" height="4" fill="#2563EB" rx="1"/>
+    <rect x="25" y="1" width="2" height="4" fill="#2563EB" rx="1"/>
   </g>
   
   <!-- Company Name -->
-  <text x="42" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Ролтех</text>
-  <text x="42" y="35" font-family="Arial, sans-serif" font-size="9" fill="#94A3B8">GARAGE DOORS</text>
+  <text x="48" y="23" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F2937">Ролтех</text>
+  <text x="48" y="38" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">GARAGE DOORS & SHUTTERS</text>
 </svg>
