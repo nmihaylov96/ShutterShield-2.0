@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
-// Using SVG logo for better quality and contrast
+import logoPath from '@assets/A modern, minimalist logo design for a company specializing in roller garage shutters.  The logo should feature a stylized image of a roller shutter, perhaps represented by clean lines and geometric shapes, in shad_1755075612743.jpg';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,11 +39,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-        : 'bg-white/90 backdrop-blur-sm shadow-md'
-    }`}>
+    <nav className="bg-slate-700 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -51,10 +47,10 @@ export function Navigation() {
             <div className="flex items-center space-x-2">
               <button 
                 onClick={() => setLocation('/')}
-                className="flex items-center space-x-3 text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
+                className="flex items-center space-x-3 text-2xl font-bold text-white hover:text-blue-300 transition-colors"
               >
                 <img 
-                  src="/logo.svg" 
+                  src={logoPath} 
                   alt="Ролтех Logo" 
                   className="h-16 w-auto object-contain"
                 />
@@ -68,33 +64,33 @@ export function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
               >
                 {t.navigation.home}
               </button>
               
               <div className="relative group">
-                <button className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium flex items-center">
+                <button className="text-white hover:text-blue-300 transition-colors duration-200 font-medium flex items-center">
                   {t.navigation.products}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute left-0 mt-2 w-64 bg-slate-600 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-2">
                     <button
                       onClick={() => setLocation('/sectional-doors')}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue"
+                      className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-slate-500 hover:text-blue-300"
                     >
                       {t.navigation.sectional}
                     </button>
                     <button
                       onClick={() => setLocation('/roller-doors')}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue"
+                      className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-slate-500 hover:text-blue-300"
                     >
                       {t.navigation.roller}
                     </button>
                     <button
                       onClick={() => setLocation('/berry-doors')}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue"
+                      className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-slate-500 hover:text-blue-300"
                     >
                       {t.navigation.berry}
                     </button>
@@ -104,21 +100,21 @@ export function Navigation() {
               
               <button
                 onClick={() => setLocation('/services')}
-                className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
               >
                 {t.navigation.services}
               </button>
               
               <button
                 onClick={() => setLocation('/about')}
-                className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
               >
                 {t.navigation.about}
               </button>
               
               <button
                 onClick={() => setLocation('/contact')}
-                className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
               >
                 {t.navigation.contact}
               </button>
@@ -147,7 +143,7 @@ export function Navigation() {
             </div>
             <Button
               onClick={() => scrollToSection('contact')}
-              className="bg-primary-blue hover:bg-secondary-blue"
+              className="bg-blue-500 hover:bg-blue-600 text-white"
             >
               {t.navigation.freeQuote}
             </Button>
@@ -157,7 +153,7 @@ export function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-primary-blue focus:outline-none"
+              className="text-white hover:text-blue-300 focus:outline-none"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -167,47 +163,47 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-slate-700 border-t border-slate-600">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
               onClick={() => setLocation('/')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
             >
               {t.navigation.home}
             </button>
             <button
               onClick={() => setLocation('/sectional-doors')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300"
             >
               {t.navigation.sectional}
             </button>
             <button
               onClick={() => setLocation('/roller-doors')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300"
             >
               {t.navigation.roller}
             </button>
             <button
               onClick={() => setLocation('/berry-doors')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300"
             >
               {t.navigation.berry}
             </button>
             <button
               onClick={() => setLocation('/services')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
             >
               {t.navigation.services}
             </button>
             <button
               onClick={() => setLocation('/about')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
             >
               {t.navigation.about}
             </button>
             <button
               onClick={() => setLocation('/contact')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-blue font-medium"
+              className="block w-full text-left px-3 py-2 text-white hover:text-blue-300 font-medium"
             >
               {t.navigation.contact}
             </button>
