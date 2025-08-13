@@ -41,7 +41,7 @@ export function Navigation() {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center" style={{ minHeight: '220px' }}>
+        <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <button 
