@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
 import logoPath from '@assets/Untitled design (2)_1755076917653.png';
 
+
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,13 +48,14 @@ export function Navigation() {
             <button 
               onClick={() => setLocation('/')}
               className="flex items-center text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              <img 
-                src={logoPath} 
-                alt="RollTech Logo" 
-                className="h-20 w-auto object-contain"
-              />
-            </button>
+              >
+                <img 
+                  src={logoPath} 
+                  alt="RollTech Logo" 
+                  className="h-20 w-auto object-contain"
+                />
+              </button>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -118,13 +120,14 @@ export function Navigation() {
             </div>
           </div>
 
-          {/* Right side - Language Switcher & CTA */}
+          {/* Language Switcher & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Button
                 variant={language === 'bg' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setLanguage('bg')}
+                className="px-3 py-1"
               >
                 BG
               </Button>
@@ -132,13 +135,13 @@ export function Navigation() {
                 variant={language === 'en' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setLanguage('en')}
+                className="px-3 py-1"
               >
                 EN
               </Button>
             </div>
             <Button
-              onClick={() => setLocation('/contact')}
-              size="sm"
+              onClick={() => scrollToSection('contact')}
               className="bg-blue-500 hover:bg-blue-600 text-white"
             >
               {t.navigation.freeQuote}
