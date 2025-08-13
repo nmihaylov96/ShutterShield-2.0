@@ -59,13 +59,13 @@ export function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="text-center p-6 bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 rounded-none">
+            <Card key={index} className="text-center p-6 bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 rounded-none flex flex-col h-full">
               <div className="w-12 h-12 bg-primary-blue flex items-center justify-center mx-auto mb-4 rounded-none">
                 {service.icon}
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">{service.description}</p>
-              <div className="text-center">
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">{service.description}</p>
+              <div className="text-center mt-auto">
                 <button className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 text-sm font-medium transition-colors rounded-none border-0">
                   {t.common.readMore} →
                 </button>
@@ -101,13 +101,13 @@ export function Services() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="text-center p-4 border border-gray-300 border-opacity-30">
+              <div key={index} className="text-center p-4 border border-gray-300 border-opacity-30 flex flex-col h-full min-h-[200px]">
                 <div className="w-12 h-12 border-2 border-white flex items-center justify-center mx-auto mb-4">
                   {service.icon}
                 </div>
                 <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
-                <p className="text-gray-200 text-sm mb-4 leading-relaxed">{service.description}</p>
-                <div className="text-center">
+                <p className="text-gray-200 text-sm mb-4 leading-relaxed flex-grow">{service.description}</p>
+                <div className="text-center mt-auto">
                   <button className="border border-white text-white px-6 py-2 text-sm font-medium hover:bg-white hover:text-primary-blue transition-colors rounded-none">
                     {t.common.learnMore} →
                   </button>
