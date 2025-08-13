@@ -58,7 +58,7 @@ export default function About() {
           <Button
             variant="outline"
             onClick={() => setLocation('/')}
-            className="mb-8 border-white text-white bg-transparent hover:bg-white hover:text-primary-blue rounded-none"
+            className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Назад
