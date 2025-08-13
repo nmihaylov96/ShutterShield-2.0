@@ -66,7 +66,7 @@ export function Services() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
               <p className="text-gray-600 text-sm mb-4 leading-relaxed">{service.description}</p>
               <button className="bg-primary-blue hover:bg-secondary-blue text-white px-4 py-2 text-sm font-medium transition-colors rounded-none border-0">
-                Read More →
+                {t.common.readMore} →
               </button>
             </Card>
           ))}
@@ -74,8 +74,8 @@ export function Services() {
 
         {/* Professional Service Section */}
         <div className="bg-white text-center mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">See Our Difference in Garage Door Installation</h3>
-          <p className="text-lg text-gray-600 mb-8">We bring out the best in every work we do.</p>
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">{t.services.difference.title}</h3>
+          <p className="text-lg text-gray-600 mb-8">{t.services.difference.subtitle}</p>
           <div className="relative max-w-4xl mx-auto">
             <img
               src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
@@ -93,8 +93,8 @@ export function Services() {
         {/* Why Choose Us Section */}
         <div className="bg-primary-blue text-white py-12 px-8 rounded-none">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">Why Choose Us?</h3>
-            <p className="text-lg text-gray-200">Professional services we provide in our municipality.</p>
+            <h3 className="text-3xl font-bold mb-4">{t.services.whyChoose.title}</h3>
+            <p className="text-lg text-gray-200">{t.services.whyChoose.subtitle}</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -106,7 +106,7 @@ export function Services() {
                 <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
                 <p className="text-gray-200 text-sm mb-4 leading-relaxed">{service.description}</p>
                 <button className="border border-white text-white px-4 py-2 text-sm font-medium hover:bg-white hover:text-primary-blue transition-colors rounded-none">
-                  Learn More →
+                  {t.common.learnMore} →
                 </button>
               </div>
             ))}

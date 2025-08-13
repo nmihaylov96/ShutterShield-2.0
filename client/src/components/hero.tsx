@@ -44,7 +44,7 @@ export function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-white text-white px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold rounded-none"
+              className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold rounded-none"
               onClick={() => window.open('tel:+359888123456', '_self')}
             >
               <Phone className="mr-2 h-5 w-5" />

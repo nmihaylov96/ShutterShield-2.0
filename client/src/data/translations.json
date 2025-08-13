@@ -67,6 +67,14 @@
         "title": "Сертифицирани от Hörmann",
         "subtitle": "Ние сме официален партньор на Hörmann за България. Това гарантира най-високото качество на монтаж и сервиз.",
         "features": ["Сертифициран монтаж", "Оригинални части", "Обучен персонал", "Гаранция 5 години"]
+      },
+      "difference": {
+        "title": "Вижте нашата разлика в монтажа на гаражни врати",
+        "subtitle": "Извличаме най-доброто от всяка работа, която правим."
+      },
+      "whyChoose": {
+        "title": "Защо да ни изберете?",
+        "subtitle": "Професионални услуги, които предоставяме в нашия регион."
       }
     },
     "about": {
@@ -121,6 +129,10 @@
       "warranty": "Гаранция",
       "contact": "Контакти",
       "copyright": "Всички права запазени."
+    },
+    "common": {
+      "readMore": "Виж още",
+      "learnMore": "Научете повече"
     }
   },
   "en": {
@@ -191,6 +203,14 @@
         "title": "Certified by Hörmann",
         "subtitle": "We are an official Hörmann partner for Bulgaria. This guarantees the highest quality of installation and service.",
         "features": ["Certified installation", "Original parts", "Trained staff", "5-year warranty"]
+      },
+      "difference": {
+        "title": "See Our Difference in Garage Door Installation",
+        "subtitle": "We bring out the best in every work we do."
+      },
+      "whyChoose": {
+        "title": "Why Choose Us?",
+        "subtitle": "Professional services we provide in our municipality."
       }
     },
     "about": {
@@ -245,6 +265,10 @@
       "warranty": "Warranty",
       "contact": "Contact",
       "copyright": "All rights reserved."
+    },
+    "common": {
+      "readMore": "Read More",
+      "learnMore": "Learn More"
     }
   }
 }
