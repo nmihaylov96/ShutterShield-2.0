@@ -72,7 +72,7 @@ export default function Services() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-dark-navy to-primary-blue text-white py-20">
+      <section className="relative bg-gradient-to-r from-primary-blue to-secondary-blue text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="outline"

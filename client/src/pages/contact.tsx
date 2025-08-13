@@ -96,12 +96,12 @@ export default function Contact() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-dark-navy to-primary-blue text-white py-20">
+      <section className="relative bg-gradient-to-r from-primary-blue to-secondary-blue text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="outline"
             onClick={() => setLocation('/')}
-            className="mb-8 border-white text-white hover:bg-white hover:text-primary-blue"
+            className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Назад
@@ -113,6 +113,28 @@ export default function Contact() {
             <p className="text-xl text-gray-200 mb-8">
               {t.contact.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold rounded-none"
+                onClick={() => {
+                  const formElement = document.getElementById('contact-form');
+                  if (formElement) {
+                    formElement.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <Send className="mr-2 h-5 w-5" />
+                Изпратете запитване
+              </Button>
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold rounded-none"
+                onClick={() => window.open('tel:+359888123456', '_self')}
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Обадете се
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -165,7 +187,7 @@ export default function Contact() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.contact.form.title}</h3>
               
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
