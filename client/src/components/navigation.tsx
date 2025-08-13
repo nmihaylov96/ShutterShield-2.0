@@ -45,7 +45,7 @@ export function Navigation() {
         : 'bg-white/90 backdrop-blur-sm shadow-md'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-32">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <div className="flex items-center space-x-2">
@@ -56,7 +56,7 @@ export function Navigation() {
                 <img 
                   src={logoPath} 
                   alt="Ролтех Logo" 
-                  className="h-20 w-auto object-contain"
+                  className="h-28 w-auto object-contain"
                 />
                 <span>Ролтех</span>
               </button>
