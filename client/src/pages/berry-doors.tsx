@@ -1,25 +1,91 @@
+import { useState } from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
+import { ProductFilter } from '@/components/product-filter';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { CheckCircle, ArrowLeft, Phone } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
 import { useLocation } from 'wouter';
 
 export default function BerryDoors() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
+  const [filters, setFilters] = useState<any>({});
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
-  const berryDoorGallery = [
-    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+  const berryDoorProducts = [
+    {
+      id: 1,
+      name: "Berry Classic врата",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Класическа",
+      color: "Бяло",
+      description: "Елегантна Berry врата с класически дизайн"
+    },
+    {
+      id: 2,
+      name: "Berry Modern врата",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      material: "Алуминий",
+      thickness: "42мм",
+      design: "Модерна",
+      color: "Сиво",
+      description: "Съвременна Berry врата с минималистичен дизайн"
+    },
+    {
+      id: 3,
+      name: "Berry Deluxe врата",
+      image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      material: "Композит",
+      thickness: "67мм",
+      design: "Декоративна",
+      color: "Кафяво",
+      description: "Луксозна Berry врата с богата декорация"
+    },
+    {
+      id: 4,
+      name: "Berry Smart врата",
+      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      material: "Стомана",
+      thickness: "40мм",
+      design: "С прозорци",
+      color: "Черно",
+      description: "Интелигентна Berry врата с прозорци"
+    },
+    {
+      id: 5,
+      name: "Berry Eco врата",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      material: "Дърво",
+      thickness: "42мм",
+      design: "Естествена",
+      color: "Натурално",
+      description: "Екологична Berry врата от естествено дърво"
+    },
+    {
+      id: 6,
+      name: "Berry Premium врата",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      material: "Композит",
+      thickness: "67мм",
+      design: "Гладка",
+      color: "Бежово",
+      description: "Премиум Berry врата с отлично качество"
+    }
   ];
+
+  const filteredProducts = berryDoorProducts.filter(product => {
+    if (filters.materials?.length > 0 && !filters.materials.includes(product.material)) return false;
+    if (filters.thickness?.length > 0 && !filters.thickness.includes(product.thickness)) return false;
+    if (filters.designs?.length > 0 && !filters.designs.includes(product.design)) return false;
+    if (filters.colors?.length > 0 && !filters.colors.includes(product.color)) return false;
+    return true;
+  });
+
+
 
   const scrollToContact = () => {
     setLocation('/');
@@ -109,7 +175,7 @@ export default function BerryDoors() {
             </div>
             <div>
               <img
-                src={berryDoorGallery[0]}
+                src={berryDoorProducts[0].image}
                 alt="Berry garage door"
                 className="rounded-lg shadow-lg w-full h-auto"
               />
@@ -118,22 +184,119 @@ export default function BerryDoors() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-16 bg-white">
+      {/* Products Section with Filter */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Галерия от реализирани проекти
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {berryDoorGallery.map((image, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <img
-                  src={image}
-                  alt={`Berry door project ${index + 1}`}
-                  className="w-full h-64 object-cover"
-                />
-              </Card>
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Нашите Berry врати</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Открийте уникалните Berry врати - елегантни, персонализируеми и изработени с внимание към детайла
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Filter Sidebar */}
+            <div className="lg:w-80">
+              <ProductFilter onFilterChange={setFilters} productType="berry" />
+            </div>
+
+            {/* Products Grid */}
+            <div className="flex-1">
+              {/* View Controls */}
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-gray-600">
+                  Показани {filteredProducts.length} от {berryDoorProducts.length} продукта
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    variant={viewMode === 'grid' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('grid')}
+                    className="p-2"
+                  >
+                    <Grid className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant={viewMode === 'list' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('list')}
+                    className="p-2"
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Products Display */}
+              <div className={`${
+                viewMode === 'grid' 
+                  ? 'grid md:grid-cols-2 xl:grid-cols-3 gap-6' 
+                  : 'space-y-4'
+              }`}>
+                {filteredProducts.map((product) => (
+                  <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div className={`${
+                      viewMode === 'grid' ? 'flex flex-col' : 'flex flex-row'
+                    }`}>
+                      <div className={`relative ${
+                        viewMode === 'grid' ? 'h-48' : 'w-48 h-32'
+                      }`}>
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <CardContent className={`p-4 ${
+                        viewMode === 'grid' ? '' : 'flex-1'
+                      }`}>
+                        <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                          {product.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-3">
+                          {product.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <span className="inline-block bg-primary-blue/10 text-primary-blue text-xs px-2 py-1 rounded">
+                            {product.material}
+                          </span>
+                          <span className="inline-block bg-secondary-blue/10 text-secondary-blue text-xs px-2 py-1 rounded">
+                            {product.thickness}
+                          </span>
+                          <span className="inline-block bg-yellow-accent/20 text-gray-700 text-xs px-2 py-1 rounded">
+                            {product.design}
+                          </span>
+                        </div>
+
+                        <Button 
+                          onClick={scrollToContact}
+                          className="bg-primary-blue hover:bg-secondary-blue text-white"
+                          size="sm"
+                        >
+                          Поискай оферта
+                        </Button>
+                      </CardContent>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+
+              {filteredProducts.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-gray-500 text-lg">
+                    Няма продукти, отговарящи на избраните филтри
+                  </p>
+                  <Button
+                    variant="outline"
+                    onClick={() => setFilters({})}
+                    className="mt-4"
+                  >
+                    Изчисти филтрите
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
