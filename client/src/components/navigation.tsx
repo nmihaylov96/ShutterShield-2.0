@@ -1,13 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
+import logoPath from '@assets/A modern, minimalist logo design for a company specializing in roller garage shutters.  The logo should feature a stylized image of a roller shutter, perhaps represented by clean lines and geometric shapes, in shad_1755074071371.jpg';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const [, setLocation] = useLocation();
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     if (sectionId === 'home') {
@@ -27,7 +39,11 @@ export function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+        : 'bg-white/90 backdrop-blur-sm shadow-md'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -35,15 +51,13 @@ export function Navigation() {
             <div className="flex items-center space-x-2">
               <button 
                 onClick={() => setLocation('/')}
-                className="flex items-center space-x-2 text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
+                className="flex items-center space-x-3 text-2xl font-bold text-primary-blue hover:text-secondary-blue transition-colors"
               >
-                <div className="h-8 w-8 bg-primary-blue rounded-sm flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-                    <path d="M21 8V6c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v2H2v8h2v4h2v-4h12v4h2v-4h2V8h-1zm-2-2v2H5V6h14zm1 4v6H4v-6h16z"/>
-                    <rect x="6" y="13" width="12" height="1"/>
-                    <rect x="6" y="11" width="12" height="1"/>
-                  </svg>
-                </div>
+                <img 
+                  src={logoPath} 
+                  alt="Ролтех Logo" 
+                  className="h-10 w-auto object-contain"
+                />
                 <span>Ролтех</span>
               </button>
             </div>
