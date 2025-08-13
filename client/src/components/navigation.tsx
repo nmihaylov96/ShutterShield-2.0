@@ -56,7 +56,7 @@ export function Navigation() {
                 <img 
                   src={logoPath} 
                   alt="Ролтех Logo" 
-                  className="h-14 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
                 <span>Ролтех</span>
               </button>
