@@ -53,7 +53,7 @@ export function Navigation() {
                 src={logoPath} 
                 alt="РОЛТЕХ Logo" 
                 className="w-auto object-contain"
-                style={{ height: '80px', maxWidth: '200px' }}
+                style={{ height: '110px', maxWidth: '250px' }}
               />
             </button>
           </div>
