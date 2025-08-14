@@ -33,6 +33,19 @@ export default function Contact() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
 
+  // Get product info from URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const productInfo = urlParams.get('product');
+  
+  // Determine service type based on product info
+  const getServiceType = (product: string | null) => {
+    if (!product) return '';
+    if (product.toLowerCase().includes('секционн')) return 'sectional';
+    if (product.toLowerCase().includes('ролетн')) return 'roller';
+    if (product.toLowerCase().includes('berry')) return 'berry';
+    return 'sectional'; // default
+  };
+  
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -40,8 +53,8 @@ export default function Contact() {
       lastName: '',
       phone: '',
       email: '',
-      service: '',
-      message: '',
+      service: getServiceType(productInfo),
+      message: productInfo ? `Интересувам се от: ${productInfo}` : '',
     },
   });
 
@@ -79,12 +92,12 @@ export default function Contact() {
     {
       icon: <Phone className="text-white" />,
       title: t.contact.phone,
-      content: '+359 888 123 456\n+359 42 123 456',
+      content: '087 678 2271',
     },
     {
       icon: <Mail className="text-white" />,
       title: 'Email',
-      content: 'info@delicegarage.bg\nservice@delicegarage.bg',
+      content: 'rolltech2020@gmail.com',
     },
     {
       icon: <Clock className="text-white" />,

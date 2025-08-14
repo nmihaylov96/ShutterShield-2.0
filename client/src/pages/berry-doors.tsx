@@ -270,7 +270,10 @@ export default function BerryDoors() {
                         </div>
 
                         <Button 
-                          onClick={scrollToContact}
+                          onClick={() => {
+                            const productInfo = `${product.name} - ${product.material}, ${product.thickness}, ${product.design}`;
+                            setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
+                          }}
                           className="bg-primary-blue hover:bg-secondary-blue text-white"
                           size="sm"
                         >
