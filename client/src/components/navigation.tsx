@@ -49,10 +49,10 @@ export function Navigation() {
               className="flex items-center text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
             >
               <img 
-                src="/src/assets/roltech-logo.svg" 
+                src="/attached_assets/299453997_750338246357449_8314893596505984927_n_1755159753630.jpg" 
                 alt="РОЛТЕХ Logo" 
                 className="w-auto object-contain"
-                style={{ height: '100px' }}
+                style={{ height: '80px', maxWidth: '200px' }}
               />
             </button>
           </div>
