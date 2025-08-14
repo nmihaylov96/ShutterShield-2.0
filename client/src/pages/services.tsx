@@ -3,12 +3,18 @@ import { Footer } from '@/components/footer';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { useEffect } from 'react';
 import { ArrowLeft, Wrench, Settings, Shield, Phone, Award, Cog, Users, Clock } from 'lucide-react';
 import { useLocation } from 'wouter';
 
 export default function Services() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const services = [
     {

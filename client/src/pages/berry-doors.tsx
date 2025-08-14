@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { ProductFilter } from '@/components/product-filter';
@@ -13,6 +13,11 @@ export default function BerryDoors() {
   const [, setLocation] = useLocation();
   const [filters, setFilters] = useState<any>({});
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const berryDoorProducts = [
     {

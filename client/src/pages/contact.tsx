@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -32,6 +32,11 @@ export default function Contact() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Get product info from URL parameters
   const urlParams = new URLSearchParams(window.location.search);

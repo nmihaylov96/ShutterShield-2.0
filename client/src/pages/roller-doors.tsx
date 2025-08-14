@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
 import { ProductFilter } from '@/components/product-filter';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 
 export default function RollerDoors() {
@@ -13,6 +13,11 @@ export default function RollerDoors() {
   const [, setLocation] = useLocation();
   const [filters, setFilters] = useState<any>({});
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const rollerDoorProducts = [
     {
