@@ -115,11 +115,11 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <span className="mr-2">📞</span>
-                <a href="tel:+359888123456" className="hover:text-white">+359 888 123 456</a>
+                <a href="tel:+359876782271" className="hover:text-white">087 678 2271</a>
               </div>
               <div className="flex items-center">
                 <span className="mr-2">✉️</span>
-                <a href="mailto:info@rolltech.bg" className="hover:text-white">info@rolltech.bg</a>
+                <a href="mailto:rolltech2020@gmail.com" className="hover:text-white">rolltech2020@gmail.com</a>
               </div>
             </div>
           </div>

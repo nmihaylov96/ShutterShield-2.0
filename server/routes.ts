@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { z } from "zod";
 import { storage } from "./storage";
 import { insertContactRequestSchema } from "@shared/schema";
+import { sendContactNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -14,12 +15,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Create the contact request
       const contactRequest = await storage.createContactRequest(validatedData);
       
-      // Log the contact request (in a real app, you might send an email notification)
+      // Send email notification
+      const emailSent = await sendContactNotification({
+        name: contactRequest.name,
+        email: contactRequest.email,
+        phone: contactRequest.phone,
+        service: contactRequest.service,
+        message: contactRequest.message,
+      });
+      
       console.log('New contact request received:', {
         id: contactRequest.id,
         name: contactRequest.name,
         email: contactRequest.email,
         service: contactRequest.service,
+        emailSent: emailSent,
         createdAt: contactRequest.createdAt,
       });
 
