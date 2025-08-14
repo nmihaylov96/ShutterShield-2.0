@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
-import logoPath from '@assets/Untitled design (2)_1755076917653.png';
+
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,10 +49,10 @@ export function Navigation() {
               className="flex items-center text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
             >
               <img 
-                src={logoPath} 
-                alt="RollTech Logo" 
+                src="/src/assets/roltech-logo.svg" 
+                alt="РОЛТЕХ Logo" 
                 className="w-auto object-contain"
-                style={{ height: '200px' }}
+                style={{ height: '100px' }}
               />
             </button>
           </div>
