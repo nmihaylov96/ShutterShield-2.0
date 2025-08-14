@@ -2,7 +2,23 @@ import nodemailer from 'nodemailer';
 
 // Create transporter - multiple options
 const createTransporter = () => {
-  // Option 1: Use SMTP2GO (free tier available)
+  // Option 1: Use Hostinger Mail (preferred)
+  if (process.env.HOSTINGER_EMAIL && process.env.HOSTINGER_PASSWORD) {
+    return nodemailer.createTransport({
+      host: 'smtp.hostinger.com',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: process.env.HOSTINGER_EMAIL,
+        pass: process.env.HOSTINGER_PASSWORD
+      },
+      tls: {
+        rejectUnauthorized: false
+      }
+    });
+  }
+  
+  // Option 2: Use SMTP2GO (free tier available)
   if (process.env.SMTP2GO_API_KEY) {
     return nodemailer.createTransport({
       host: 'mail.smtp2go.com',
@@ -14,7 +30,7 @@ const createTransporter = () => {
     });
   }
   
-  // Option 2: Use SendGrid (free tier available)
+  // Option 3: Use SendGrid (paid)
   if (process.env.SENDGRID_API_KEY) {
     return nodemailer.createTransport({
       host: 'smtp.sendgrid.net',
@@ -26,13 +42,18 @@ const createTransporter = () => {
     });
   }
   
-  // Option 3: Use Gmail with less secure apps (not recommended but works)
+  // Option 4: Use Gmail with OAuth2 (more secure)
   if (process.env.GMAIL_USER && process.env.GMAIL_PASSWORD) {
     return nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASSWORD
+      },
+      tls: {
+        rejectUnauthorized: false
       }
     });
   }
@@ -68,7 +89,7 @@ export const sendContactNotification = async (contactData: {
     }
     
     const mailOptions = {
-      from: process.env.GMAIL_USER || process.env.SMTP2GO_USERNAME || 'noreply@rolltech.bg',
+      from: process.env.HOSTINGER_EMAIL || process.env.GMAIL_USER || process.env.SMTP2GO_USERNAME || 'noreply@rolltech.bg',
       to: 'rolltech2020@gmail.com',
       subject: `Ново запитване от ${contactData.name} - RollTech`,
       html: `
