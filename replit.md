@@ -10,7 +10,7 @@ Preferred communication style: Simple, everyday language.
 Logo requirements: Professional SVG logo with seamless navbar integration
 Site readiness: Fully prepared for production deployment with SEO optimization
 
-## Recent Changes (January 13, 2025)
+## Recent Changes (August 14, 2025)
 
 ✓ Created custom SVG logo with professional design matching brand identity
 ✓ Integrated logo seamlessly into navigation with optimal color matching (#2D2D37)
@@ -20,7 +20,12 @@ Site readiness: Fully prepared for production deployment with SEO optimization
 ✓ Finalized all product filtering across sectional, roller, and Berry door categories
 ✓ Implemented bilingual support (Bulgarian primary, English secondary)
 ✓ Completed all navigation sections as separate pages (not scroll sections)
-✓ Site is production-ready and fully functional
+✓ Updated branding from "Delice Garage" to "RollTech" throughout site
+✓ Configured Hostinger email integration for contact form functionality
+✓ Added separate Name and Last Name fields to contact form
+✓ Services now display in Bulgarian in email notifications (Секционни врати, Ролетни врати, etc.)
+✓ Updated contact information to 087 678 2271 and rolltech2020@gmail.com
+✓ Site is production-ready and fully functional with working contact form
 
 ## System Architecture
 

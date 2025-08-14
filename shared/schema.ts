@@ -12,6 +12,7 @@ export const users = pgTable("users", {
 export const contactRequests = pgTable("contact_requests", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
+  lastName: text("last_name").notNull(),
   phone: text("phone").notNull(),
   email: text("email").notNull(),
   service: text("service").notNull(),
@@ -26,6 +27,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
 
 export const insertContactRequestSchema = createInsertSchema(contactRequests).pick({
   name: true,
+  lastName: true,
   phone: true,
   email: true,
   service: true,

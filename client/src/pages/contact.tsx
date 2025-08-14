@@ -18,11 +18,12 @@ import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  phone: z.string().min(5, 'Phone must be at least 5 characters'),
-  email: z.string().email('Please enter a valid email'),
-  service: z.string().min(1, 'Please select a service'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  name: z.string().min(2, 'Името трябва да съдържа поне 2 символа'),
+  lastName: z.string().min(2, 'Фамилията трябва да съдържа поне 2 символа'),
+  phone: z.string().min(5, 'Телефонът трябва да съдържа поне 5 символа'),
+  email: z.string().email('Моля въведете валиден имейл адрес'),
+  service: z.string().min(1, 'Моля изберете услуга'),
+  message: z.string().min(10, 'Съобщението трябва да съдържа поне 10 символа'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -36,6 +37,7 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: '',
+      lastName: '',
       phone: '',
       email: '',
       service: '',
@@ -194,9 +196,9 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.contact.form.name}</FormLabel>
+                          <FormLabel>Име</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.contact.form.namePlaceholder} {...field} />
+                            <Input placeholder="Иван" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -204,12 +206,12 @@ export default function Contact() {
                     />
                     <FormField
                       control={form.control}
-                      name="phone"
+                      name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.contact.form.phone}</FormLabel>
+                          <FormLabel>Фамилия</FormLabel>
                           <FormControl>
-                            <Input placeholder="+359 888 123 456" {...field} />
+                            <Input placeholder="Петров" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -217,19 +219,36 @@ export default function Contact() {
                     />
                   </div>
 
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t.contact.form.email}</FormLabel>
-                        <FormControl>
-                          <Input placeholder="your@email.com" type="email" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t.contact.form.phone}</FormLabel>
+                          <FormControl>
+                            <Input placeholder="087 678 2271" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t.contact.form.email}</FormLabel>
+                          <FormControl>
+                            <Input placeholder="your@email.com" type="email" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+
 
                   <FormField
                     control={form.control}

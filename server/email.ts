@@ -62,8 +62,23 @@ const createTransporter = () => {
   return null;
 };
 
+// Service translation function
+const getServiceInBulgarian = (service: string): string => {
+  const serviceMap: { [key: string]: string } = {
+    'sectional': 'Секционни врати',
+    'roller': 'Ролетни врати', 
+    'berry': 'Врати Berry',
+    'installation': 'Монтаж',
+    'repair': 'Ремонт',
+    'maintenance': 'Поддръжка',
+    'consultation': 'Консултация'
+  };
+  return serviceMap[service] || service;
+};
+
 export const sendContactNotification = async (contactData: {
   name: string;
+  lastName: string;
   email: string;
   phone: string;
   service: string;
@@ -77,10 +92,10 @@ export const sendContactNotification = async (contactData: {
       console.log('='.repeat(50));
       console.log('НОВО ЗАПИТВАНЕ ОТ УЕБСАЙТА:');
       console.log('='.repeat(50));
-      console.log(`Име: ${contactData.name}`);
+      console.log(`Име: ${contactData.name} ${contactData.lastName}`);
       console.log(`Имейл: ${contactData.email}`);
       console.log(`Телефон: ${contactData.phone}`);
-      console.log(`Услуга: ${contactData.service}`);
+      console.log(`Услуга: ${getServiceInBulgarian(contactData.service)}`);
       console.log(`Съобщение: ${contactData.message}`);
       console.log('='.repeat(50));
       console.log('ЗА ИЗПРАЩАНЕ НА ИМЕЙЛИ ДОБАВЕТЕ EMAIL НАСТРОЙКИ');
@@ -91,13 +106,13 @@ export const sendContactNotification = async (contactData: {
     const mailOptions = {
       from: process.env.HOSTINGER_EMAIL || process.env.GMAIL_USER || process.env.SMTP2GO_USERNAME || 'noreply@rolltech.bg',
       to: 'rolltech2020@gmail.com',
-      subject: `Ново запитване от ${contactData.name} - RollTech`,
+      subject: `Ново запитване от ${contactData.name} ${contactData.lastName} - RollTech`,
       html: `
         <h2>Ново запитване от уебсайта</h2>
-        <p><strong>Име:</strong> ${contactData.name}</p>
+        <p><strong>Име:</strong> ${contactData.name} ${contactData.lastName}</p>
         <p><strong>Имейл:</strong> ${contactData.email}</p>
         <p><strong>Телефон:</strong> ${contactData.phone}</p>
-        <p><strong>Услуга:</strong> ${contactData.service}</p>
+        <p><strong>Услуга:</strong> ${getServiceInBulgarian(contactData.service)}</p>
         <p><strong>Съобщение:</strong></p>
         <p>${contactData.message}</p>
         <hr>
@@ -114,10 +129,10 @@ export const sendContactNotification = async (contactData: {
     console.log('='.repeat(50));
     console.log('НОВО ЗАПИТВАНЕ (EMAIL НЕУСПЕШЕН):');
     console.log('='.repeat(50));
-    console.log(`Име: ${contactData.name}`);
+    console.log(`Име: ${contactData.name} ${contactData.lastName}`);
     console.log(`Имейл: ${contactData.email}`);
     console.log(`Телефон: ${contactData.phone}`);
-    console.log(`Услуга: ${contactData.service}`);
+    console.log(`Услуга: ${getServiceInBulgarian(contactData.service)}`);
     console.log(`Съобщение: ${contactData.message}`);
     console.log('='.repeat(50));
     return false;

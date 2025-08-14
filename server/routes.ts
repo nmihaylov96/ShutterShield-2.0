@@ -18,6 +18,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email notification
       const emailSent = await sendContactNotification({
         name: contactRequest.name,
+        lastName: contactRequest.lastName,
         email: contactRequest.email,
         phone: contactRequest.phone,
         service: contactRequest.service,
