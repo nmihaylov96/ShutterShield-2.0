@@ -112,13 +112,6 @@ export function Navigation() {
               </button>
               
               <button
-                onClick={() => setLocation('/testimonials')}
-                className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
-              >
-                Отзиви
-              </button>
-              
-              <button
                 onClick={() => setLocation('/contact')}
                 className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
@@ -223,15 +216,6 @@ export function Navigation() {
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
               {t.navigation.about}
-            </button>
-            <button
-              onClick={() => {
-                setLocation('/testimonials');
-                setMobileMenuOpen(false);
-              }}
-              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
-            >
-              Отзиви
             </button>
             <button
               onClick={() => {
