@@ -113,7 +113,7 @@ export default function RollerDoors() {
             className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Назад
+            {t.common.back}
           </Button>
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">

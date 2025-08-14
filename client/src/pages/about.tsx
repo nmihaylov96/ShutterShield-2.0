@@ -61,14 +61,14 @@ export default function About() {
             className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Назад
+            {t.common.back}
           </Button>
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {t.about.title}
             </h1>
             <p className="text-xl text-gray-200">
-              Професионални решения за гаражни врати и автоматизация
+              {t.about.description}
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Нашата история</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.common.ourHistory}</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {t.about.description}
               </p>

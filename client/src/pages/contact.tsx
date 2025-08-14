@@ -119,7 +119,7 @@ export default function Contact() {
             className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Назад
+            {t.common.back}
           </Button>
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -139,7 +139,7 @@ export default function Contact() {
                 }}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Изпратете запитване
+                {t.common.sendInquiry}
               </Button>
               <Button
                 variant="outline"
@@ -147,7 +147,7 @@ export default function Contact() {
                 onClick={() => window.open('tel:+359888123456', '_self')}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Обадете се
+                {t.common.callNow}
               </Button>
             </div>
           </div>

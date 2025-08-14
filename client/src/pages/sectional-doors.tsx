@@ -113,7 +113,7 @@ export default function SectionalDoors() {
             className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Назад
+            {t.common.back}
           </Button>
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -127,7 +127,7 @@ export default function SectionalDoors() {
                 onClick={scrollToContact}
                 className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold rounded-none"
               >
-                Поискайте оферта
+                {t.common.requestQuote}
               </Button>
               <Button
                 variant="outline"
@@ -148,7 +148,7 @@ export default function SectionalDoors() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Защо да изберете секционни гаражни врати?
+                {t.common.whyChooseSectional}
               </h2>
               <div className="space-y-4">
                 {t.products.sectional.features.map((feature, index) => (
@@ -160,7 +160,7 @@ export default function SectionalDoors() {
               </div>
               <div className="mt-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Допълнителни предимства:
+                  {t.common.additionalAdvantages}
                 </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Безопасна работа с автоматична защита</li>
@@ -186,7 +186,7 @@ export default function SectionalDoors() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Нашите секционни врати</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.common.ourSectionalDoors}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Разгледайте нашата богата колекция от секционни гаражни врати в различни стилове и цветове
             </p>
@@ -203,7 +203,7 @@ export default function SectionalDoors() {
               {/* View Controls */}
               <div className="flex justify-between items-center mb-6">
                 <p className="text-gray-600">
-                  Показани {filteredProducts.length} от {sectionalDoorProducts.length} продукта
+                  {t.common.showProducts.replace('6 от 6', `${filteredProducts.length} от ${sectionalDoorProducts.length}`)}
                 </p>
                 <div className="flex gap-2">
                   <Button

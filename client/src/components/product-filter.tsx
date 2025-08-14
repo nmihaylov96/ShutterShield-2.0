@@ -92,13 +92,13 @@ export function ProductFilter({ onFilterChange, productType }: ProductFilterProp
             onClick={clearFilters}
             className="text-primary-blue hover:text-secondary-blue"
           >
-            Изчисти
+            {t.common.clear}
           </Button>
         </div>
 
         {/* Материал */}
         <div className="mb-6">
-          <h4 className="font-medium mb-3 text-gray-900">Материал</h4>
+          <h4 className="font-medium mb-3 text-gray-900">{t.common.material}</h4>
           <div className="space-y-2">
             {filterOptions.materials.map((material) => (
               <div key={material} className="flex items-center space-x-2">
