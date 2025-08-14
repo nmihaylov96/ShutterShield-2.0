@@ -46,7 +46,10 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <button 
-              onClick={() => setLocation('/')}
+              onClick={() => {
+                setLocation('/');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="flex items-center text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
             >
               <img 
@@ -62,7 +65,10 @@ export function Navigation() {
           <div className="hidden md:block">
             <div className="ml-6 flex items-baseline space-x-8">
               <button
-                onClick={() => setLocation('/')}
+                onClick={() => {
+                  setLocation('/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {t.navigation.home}
@@ -167,6 +173,7 @@ export function Navigation() {
               onClick={() => {
                 setLocation('/');
                 setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600 font-medium"
             >
