@@ -22,63 +22,73 @@ export default function SectionalDoors() {
   const sectionalDoorProducts = [
     {
       id: 1,
-      name: "Секционна гаражна врата Hörmann",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      name: "MCA Секционна врата - Дървесен дизайн",
+      image: "@assets/IMG-fe64776c1aa455941441d40996ac3aaf-V_1757000294762.jpg",
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Дървесен",
+      color: "Кафяво",
+      description: "Секционна врата с изискан дървесен дизайн от MCA"
+    },
+    {
+      id: 2,
+      name: "MCA Секционна врата с интегрирана пешеходна врата",
+      image: "@assets/IMG-bd4043317dfad676f532743166ad5801-V_1757000294763.jpg",
+      material: "Стомана",
+      thickness: "40мм",
+      design: "С прозорци и пешеходна врата",
+      color: "Кафяво",
+      description: "Модерна врата със стъклени панели и интегрирана пешеходна врата"
+    },
+    {
+      id: 3,
+      name: "MCA Класическа бяла секционна врата",
+      image: "@assets/20240909_180531_1757000294763.jpg",
       material: "Стомана",
       thickness: "40мм",
       design: "Гладка",
       color: "Бяло",
-      description: "Класическа секционна врата с отлична изолация"
-    },
-    {
-      id: 2,
-      name: "Секционна врата с прозорци",
-      image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      material: "Алуминий",
-      thickness: "42мм",
-      design: "С прозорци",
-      color: "Сиво",
-      description: "Модерна врата със стъклени панели"
-    },
-    {
-      id: 3,
-      name: "Дървена секционна врата",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      material: "Дърво",
-      thickness: "67мм",
-      design: "Декоративна",
-      color: "Кафяво",
-      description: "Елегантна дървена врата с естествен вид"
+      description: "Класическа бяла секционна врата с оптимална термоизолация"
     },
     {
       id: 4,
-      name: "Касетна секционна врата",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      name: "MCA Кафява секционна врата - Хоризонтални линии",
+      image: "@assets/20250417_183831_1757000294763.jpg",
       material: "Стомана",
       thickness: "40мм",
-      design: "Касетна",
-      color: "Черно",
-      description: "Стилна касетна врата с модерен дизайн"
+      design: "Хоризонтални линии",
+      color: "Кафяво",
+      description: "Елегантна кафява врата с хоризонтални декоративни линии"
     },
     {
       id: 5,
-      name: "Изолирана секционна врата",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      material: "Изолация",
-      thickness: "80мм",
-      design: "Гладка",
-      color: "Бежово",
-      description: "Високоизолирана врата за максимална енергийна ефективност"
+      name: "MCA Индустриална секционна врата - Бяла",
+      image: "@assets/490644030_1496166088441324_79114404476998017_n_1757000294763.jpg",
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Индустриална",
+      color: "Бяло",
+      description: "Индустриална секционна врата за търговски обекти с мониторни системи"
     },
     {
       id: 6,
-      name: "Релефна секционна врата",
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      name: "MCA Множество секционни врати",
+      image: "@assets/475166115_1006926747918460_2692043983858398704_n_1757000294764.jpg",
       material: "Стомана",
-      thickness: "42мм",
-      design: "Релефна",
-      color: "Зелено",
-      description: "Атрактивна релефна повърхност"
+      thickness: "40мм",
+      design: "Класическа",
+      color: "Кафяво",
+      description: "Комплект от секционни врати за многогаражни обекти"
+    },
+    {
+      id: 7,
+      name: "MCA Съвременна тъмна секционна врата",
+      image: "@assets/488823503_1490438199014113_6054773432221823488_n_1757000294764.jpg",
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Съвременна",
+      color: "Тъмно сиво",
+      description: "Съвременна секционна врата в тъмен цвят с модерен дизайн"
     }
   ];
 
@@ -122,10 +132,10 @@ export default function SectionalDoors() {
           </Button>
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t.products.sectional.title}
+              Секционни гаражни врати MCA
             </h1>
             <p className="text-xl text-gray-200 mb-8">
-              {t.products.sectional.description}
+              Секционни гаражни врати от висок клас на отлична цена. Фирма „Ролтех" ООД е оторизиран партньор с производителите на секционни врати от най-висок клас „MCA".
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -153,27 +163,36 @@ export default function SectionalDoors() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                {t.common.whyChooseSectional}
+                Защо да изберете MCA секционни врати?
               </h2>
+              <p className="text-gray-600 mb-6 text-lg">
+                Секционните врати, които предлагаме са известни с удобството и сигурността си при употреба, елегантния дизайн, използването на най-новите технологии в съответствие с изискванията за безопасност на Европейския съюз.
+              </p>
               <div className="space-y-4">
-                {t.products.sectional.features.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
-                    <span className="text-lg text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {t.common.additionalAdvantages}
-                </h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Безопасна работа с автоматична защита</li>
-                  <li>• Различни дизайнерски решения</li>
-                  <li>• Дълготрайност и надеждност</li>
-                  <li>• Лесна поддръжка</li>
-                  <li>• Възможност за интеграция с домашна автоматика</li>
-                </ul>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
+                  <span className="text-lg text-gray-700">Оптимална термоизолация с 40мм панел</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
+                  <span className="text-lg text-gray-700">Полиуретанова изолация на панела</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
+                  <span className="text-lg text-gray-700">Дълбоко галванизирани релси и профили</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
+                  <span className="text-lg text-gray-700">Над 25 000 работни цикъла</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
+                  <span className="text-lg text-gray-700">Минимални нива на шум</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
+                  <span className="text-lg text-gray-700">Възможност за автоматизиране</span>
+                </div>
               </div>
             </div>
             <div>
@@ -305,6 +324,107 @@ export default function SectionalDoors() {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Технически характеристики
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Конструктивни характеристики</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Дебелина на панел:</span>
+                  <span className="font-medium">40мм (обшит със стоманен пласт)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Изолация:</span>
+                  <span className="font-medium">Полиуретан</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Релси и профили:</span>
+                  <span className="font-medium">Дълбоко галванизирани</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Водачи:</span>
+                  <span className="font-medium">Стомана 2-2.5мм</span>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Експлоатационни характеристики</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Работни цикли:</span>
+                  <span className="font-medium">Над 25 000</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Максимална височина:</span>
+                  <span className="font-medium">8 000мм</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Максимална ширина:</span>
+                  <span className="font-medium">10 000мм</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Шумово ниво:</span>
+                  <span className="font-medium">Минимално</span>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Системи за защита и сигурност
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <div className="flex items-center mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="font-medium">Система против скъсване на пружините</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="font-medium">Фотоклетки за безопасност</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="font-medium">Система "safety edge" - чувствителна гума</span>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="font-medium">Странични и долни гумени уплътнения</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="font-medium">Възможност за автоматизиране</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="font-medium">Интегриране на пешеходна врата</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Над 40 стандартни панела
+            </h3>
+            <p className="text-lg text-gray-600 mb-6">
+              Предлаганите от нас секционни врати разполагат с над 40 стандартни панела с различни цветове и десени. 
+              Имат възможност за остъкляване и за интегриране на пешеходна врата.
+            </p>
           </div>
         </div>
       </section>
