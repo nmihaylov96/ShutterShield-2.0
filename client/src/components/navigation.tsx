@@ -99,6 +99,18 @@ export function Navigation() {
                     >
                       Автоматика за гаражни врати
                     </button>
+                    <button
+                      onClick={() => setLocation('/industrial-doors')}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+                    >
+                      Индустриални секционни врати
+                    </button>
+                    <button
+                      onClick={() => setLocation('/pedestrian-doors')}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+                    >
+                      Пешеходни врати
+                    </button>
                   </div>
                 </div>
               </div>
@@ -205,6 +217,24 @@ export function Navigation() {
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
               Автоматика за гаражни врати
+            </button>
+            <button
+              onClick={() => {
+                setLocation('/industrial-doors');
+                setMobileMenuOpen(false);
+              }}
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
+            >
+              Индустриални секционни врати
+            </button>
+            <button
+              onClick={() => {
+                setLocation('/pedestrian-doors');
+                setMobileMenuOpen(false);
+              }}
+              className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
+            >
+              Пешеходни врати
             </button>
             <button
               onClick={() => {

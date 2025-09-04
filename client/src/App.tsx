@@ -11,6 +11,8 @@ import Services from "@/pages/services";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Automation from "@/pages/automation";
+import IndustrialDoors from "@/pages/industrial-doors";
+import PedestrianDoors from "@/pages/pedestrian-doors";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +25,8 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/automation" component={Automation} />
+      <Route path="/industrial-doors" component={IndustrialDoors} />
+      <Route path="/pedestrian-doors" component={PedestrianDoors} />
       <Route component={NotFound} />
     </Switch>
   );

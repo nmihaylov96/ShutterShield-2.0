@@ -118,29 +118,39 @@ export function Products() {
             </CardContent>
           </Card>
 
-          {/* Berry-Type Garage Doors */}
-          <Card id="berry" className="hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+          {/* Industrial Sectional Doors */}
+          <Card id="industrial" className="hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
             <div className="relative h-64 overflow-hidden rounded-t-lg">
               <img
-                src={productImages.berry[0]}
-                alt="Berry-type garage door"
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                alt="Industrial sectional garage door"
                 className="w-full h-full object-cover"
               />
             </div>
             <CardContent className="p-8 flex flex-col flex-grow">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.products.berry.title}</h3>
-              <p className="text-gray-600 mb-6 flex-grow">{t.products.berry.description}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Индустриални секционни врати</h3>
+              <p className="text-gray-600 mb-6 flex-grow">Усилени секционни врати за индустриални обекти с висока честота на използване и специални изисквания.</p>
               <div className="space-y-2 mb-6">
-                {t.products.berry.features.map((feature, index) => (
-                  <div key={index} className="flex items-center text-sm text-gray-600">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    {feature}
-                  </div>
-                ))}
+                <div className="flex items-center text-sm text-gray-600">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                  Повишена здравина и издръжливост
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                  Устойчивост на интензивна употреба
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                  Специални размери и конфигурации
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                  Подходящи за складове и производства
+                </div>
               </div>
               <div className="text-center mt-auto">
-                <Button onClick={() => setLocation('/berry-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
-                  {t.products.learnMore}
+                <Button onClick={() => setLocation('/industrial-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
+                  Научете повече
                 </Button>
               </div>
             </CardContent>
