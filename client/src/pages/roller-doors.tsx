@@ -3,152 +3,39 @@ import { Footer } from '@/components/footer';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
-import { ProductFilter } from '@/components/product-filter';
+import { CheckCircle, ArrowLeft, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 
 export default function RollerDoors() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
-  const [filters, setFilters] = useState<any>({});
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const rollerDoorProducts = [
+  // Main categories for roller doors
+  const rollerDoorCategories = [
     {
       id: 1,
-      name: "Термоизолационна ролетна врата",
-      image: "@assets/ролетна-врата-за-гараж-термо-ламел_1756995220376.jpg",
-      material: "Алуминий с полиуретанова пяна",
-      thickness: "77мм",
-      design: "Термоизолационна",
-      color: "RAL 9006",
-      description: "Алуминиеви ламели с пенополиуретанова пяна с височина 77мм и дебелина 19мм. Идеални за безопасност и комфорт.",
-      category: "Термоизолационни",
-      features: ["Отлична топлоизолация", "Звукоизолация", "Висока здравина"]
+      title: "Стоманена ролетна врата",
+      image: "@assets/Снимка катеория Стоманена ролетна врата_1756995220376.jpg",
+      description: "Здрави и икономични ролетни врати от стомана, идеални за производствени и складови помещения.",
+      features: ["Висока устойчивост", "Лесна поддръжка", "Икономична цена", "Устойчивост на взлом"],
+      category: "steel"
     },
     {
       id: 2,
-      name: "Стоманена ролетна врата с перфорация",
-      image: "@assets/h105-stuff_1756995220377.png",
-      material: "Стомана с перфорация",
-      thickness: "42мм",
-      design: "Перфорирана",
-      color: "RAL 9006",
-      description: "Стоманена ролетна врата с вентилационни отвори за оптимална вентилация.",
-      category: "Стоманени",
-      features: ["Вентилация", "Здрава конструкция", "Защита от взлом"]
-    },
-    {
-      id: 3,
-      name: "Алуминиева ролетна врата за гараж",
-      image: "@assets/IMG-e6b4a0f78cb8017edf4b4f25aa12697e-V_1756995278270.jpg",
-      material: "Алуминий",
-      thickness: "40мм",
-      design: "Гладка",
-      color: "Имитация дърво - кафяво",
-      description: "Компактна алуминиева ролетна врата с дървесна текстура за елегантен външен вид.",
-      category: "Алуминиеви",
-      features: ["Лека конструкция", "Устойчива на корозия", "Дървесна текстура"]
-    },
-    {
-      id: 4,
-      name: "Индустриална ролетна врата",
-      image: "@assets/industrialni-roletni-vrati-pravi-lameli_1756995278274.jpg",
-      material: "Стомана",
-      thickness: "42мм",
-      design: "Индустриална",
-      color: "RAL 9006",
-      description: "Устойчива, здрава и лесна за поддръжка. Перфектният бюджетен вариант за производствени или складови помещения.",
-      category: "Индустриални",
-      features: ["Висока устойчивост", "Лесна поддръжка", "Икономична"]
-    },
-    {
-      id: 5,
-      name: "Ролетна врата за търговски обект",
-      image: "@assets/IMG-e53917d0073dcdb72c800f88b61a8e13-V_1756995278269.jpg",
-      material: "Алуминий",
-      thickness: "40мм",
-      design: "Търговска",
-      color: "Бяло RAL 9010",
-      description: "Ролетна врата за търговски обекти - киоски, магазини, складове с отлична защита.",
-      category: "Търговски",
-      features: ["Защита на стоки", "Устойчива на вандализъм", "Лесна употреба"]
-    },
-    {
-      id: 6,
-      name: "Охранителна ролетна врата",
-      image: "@assets/h105-stuff (2)_1756995278272.png",
-      material: "Алуминий с перфорация",
-      thickness: "40мм",
-      design: "Охранителна",
-      color: "RAL 9006",
-      description: "Ролетна врата с прорези за видимост и вентилация, идеална за търговски обекти.",
-      category: "Охранителни",
-      features: ["Визуален контакт", "Вентилация", "Защита"]
-    },
-    {
-      id: 7,
-      name: "Автоматизирана ролетна врата с Somfy",
-      image: "@assets/475190107_1007270957884039_5553773364182985176_n_1756995305168.jpg",
-      material: "Алуминий",
-      thickness: "40мм",
-      design: "Автоматизирана",
-      color: "RAL 9006",
-      description: "Ролетна врата с професионална Somfy автоматизация за максимален комфорт.",
-      category: "Автоматизирани",
-      features: ["Дистанционно управление", "Somfy мотор", "Сензори за безопасност"]
-    },
-    {
-      id: 8,
-      name: "Модерна гаражна ролетна врата",
-      image: "@assets/ავტოფარეხის-კარი_1756995278270.jpg",
-      material: "Алуминий",
-      thickness: "40мм",
-      design: "Модерна",
-      color: "Антрацит RAL 7016",
-      description: "Съвременна ролетна врата за модерни жилищни сгради с елегантен дизайн.",
-      category: "Жилищни",
-      features: ["Модерен дизайн", "Тиха работа", "Дълготрайност"]
-    },
-    {
-      id: 9,
-      name: "Ролетна врата с мрежа за защита",
-      image: "@assets/475163142_1006919107919224_7610862781310710227_n_1756995305167.jpg",
-      material: "Алуминий с мрежа",
-      thickness: "40мм",
-      design: "С мрежа",
-      color: "Бяло RAL 9010",
-      description: "Ролетна врата с допълнителна защитна мрежа за повишена сигурност.",
-      category: "Със защита",
-      features: ["Двойна защита", "Мрежа от стомана", "Антивандал система"]
-    },
-    {
-      id: 10,
-      name: "Вентилационна ролетна врата",
-      image: "@assets/h105-stuff (1)_1756995305168.png",
-      material: "Алуминий с микроперфорация",
-      thickness: "40мм",
-      design: "Вентилационна",
-      color: "RAL 9006",
-      description: "Специална ролетна врата с микроперфорация за постоянна вентилация.",
-      category: "Вентилационни",
-      features: ["Микроперфорация", "Постоянна вентилация", "Запазена сигурност"]
+      title: "Термоизолационна ролетна врата",
+      image: "@assets/Снимка категория Термоизолационна ролетна врата_1756995278273.png",
+      description: "Алуминиеви ламели с пенополиуретанова пяна за перфектна комбинация от безопасност и комфорт.",
+      features: ["Отлична топлоизолация", "Звукоизолация", "Висока здравина", "Дебелина 77мм"],
+      category: "thermal"
     }
   ];
 
-  const filteredProducts = rollerDoorProducts.filter(product => {
-    if (filters.materials?.length > 0 && !filters.materials.includes(product.material)) return false;
-    if (filters.thickness?.length > 0 && !filters.thickness.includes(product.thickness)) return false;
-    if (filters.designs?.length > 0 && !filters.designs.includes(product.design)) return false;
-    if (filters.colors?.length > 0 && !filters.colors.includes(product.color)) return false;
-    return true;
-  });
 
   const scrollToContact = () => {
     setLocation('/');
@@ -238,7 +125,7 @@ export default function RollerDoors() {
             </div>
             <div>
               <img
-                src={rollerDoorProducts[0].image}
+                src="@assets/csm_rollmatic_1_1000x700_c767c16ac2-700x441_1756995220375.jpg"
                 alt="Roller garage door"
                 className="rounded-lg shadow-lg w-full h-auto"
               />
@@ -247,121 +134,291 @@ export default function RollerDoors() {
         </div>
       </section>
 
-      {/* Products Section with Filter */}
+      {/* Categories Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Нашите ролетни врати</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Изберете вида ролетна врата</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Разгледайте нашата колекция от ролетни гаражни врати - компактни, практични и надеждни
+              Предлагаме два основни типа ролетни врати според вашите нужди и изисквания
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Filter Sidebar */}
-            <div className="lg:w-80">
-              <ProductFilter onFilterChange={setFilters} productType="roller" />
-            </div>
-
-            {/* Products Grid */}
-            <div className="flex-1">
-              {/* View Controls */}
-              <div className="flex justify-between items-center mb-6">
-                <p className="text-gray-600">
-                  Показани {filteredProducts.length} от {rollerDoorProducts.length} продукта
-                </p>
-                <div className="flex gap-2">
-                  <Button
-                    variant={viewMode === 'grid' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setViewMode('grid')}
-                    className="p-2"
-                  >
-                    <Grid className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant={viewMode === 'list' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setViewMode('list')}
-                    className="p-2"
-                  >
-                    <List className="h-4 w-4" />
-                  </Button>
+          <div className="grid md:grid-cols-2 gap-8">
+            {rollerDoorCategories.map((category) => (
+              <Card key={category.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="relative h-64">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
                 </div>
-              </div>
-
-              {/* Products Display */}
-              <div className={`${
-                viewMode === 'grid' 
-                  ? 'grid md:grid-cols-2 xl:grid-cols-3 gap-6' 
-                  : 'space-y-4'
-              }`}>
-                {filteredProducts.map((product) => (
-                  <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                    <div className={`${
-                      viewMode === 'grid' ? 'flex flex-col' : 'flex flex-row'
-                    }`}>
-                      <div className={`relative ${
-                        viewMode === 'grid' ? 'h-48' : 'w-48 h-32'
-                      }`}>
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardContent className={`p-4 ${
-                        viewMode === 'grid' ? '' : 'flex-1'
-                      }`}>
-                        <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                          {product.name}
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-3">
-                          {product.description}
-                        </p>
-                        
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <span className="inline-block bg-primary-blue/10 text-primary-blue text-xs px-2 py-1 rounded">
-                            {product.material}
-                          </span>
-                          <span className="inline-block bg-secondary-blue/10 text-secondary-blue text-xs px-2 py-1 rounded">
-                            {product.thickness}
-                          </span>
-                          <span className="inline-block bg-yellow-accent/20 text-gray-700 text-xs px-2 py-1 rounded">
-                            {product.design}
-                          </span>
-                        </div>
-
-                        <Button 
-                          onClick={() => {
-                            const productInfo = `${product.name} - ${product.material}, ${product.thickness}, ${product.design}`;
-                            setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
-                          }}
-                          className="bg-primary-blue hover:bg-secondary-blue text-white"
-                          size="sm"
-                        >
-                          Поискай оферта
-                        </Button>
-                      </CardContent>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-
-              {filteredProducts.length === 0 && (
-                <div className="text-center py-12">
-                  <p className="text-gray-500 text-lg">
-                    Няма продукти, отговарящи на избраните филтри
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {category.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    {category.description}
                   </p>
-                  <Button
-                    variant="outline"
-                    onClick={() => setFilters({})}
-                    className="mt-4"
-                  >
-                    Изчисти филтрите
-                  </Button>
+                  
+                  <div className="space-y-2 mb-6">
+                    {category.features.map((feature, index) => (
+                      <div key={index} className="flex items-center">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button 
+                      onClick={() => {
+                        const productInfo = `${category.title} - Ролетна гаражна врата`;
+                        setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
+                      }}
+                      className="bg-primary-blue hover:bg-secondary-blue text-white flex-1"
+                    >
+                      Поискай оферта
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      onClick={() => {
+                        // Scroll to more information section
+                        const element = document.getElementById(`info-${category.category}`);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="px-4"
+                    >
+                      Още информация
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Information Sections */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Steel Roller Door Details */}
+          <div id="info-steel" className="mb-16">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  Стоманена ролетна врата
+                </h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  Здрави и икономични ролетни врати от стомана, идеални за производствени и складови помещения. 
+                  Благодарение на опростената им конструкция те са перфектния бюджетен вариант.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Устойчивост срещу атмосферни влияния</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Лесна поддръжка и дълготрайност</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Различни цветове по RAL палитра</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Възможност за перфорация за вентилация</span>
+                  </div>
                 </div>
-              )}
+              </div>
+              <div>
+                <img
+                  src="@assets/475190107_1007270957884039_5553773364182985176_n_1756995278271.jpg"
+                  alt="Steel roller door"
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Thermal Roller Door Details */}
+          <div id="info-thermal">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <img
+                  src="@assets/ролетна-врата-за-гараж-термо-ламел_1756995220376.jpg"
+                  alt="Thermal roller door"
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+              </div>
+              <div className="order-1 md:order-2">
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  Термоизолационна ролетна врата
+                </h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  Перфектна комбинация за вашата безопасност и комфорт. Изработват се от алуминиеви ламели с 
+                  пенополиуретанова пяна с височина 77мм и дебелина 19мм.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Отлична топлоизолация - намалява загубите на топлина</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Звукоизолация - намалява шума отвън</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Високо качество и стандарт на изработка</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span>Алуминиеви ламели с пяна - дебелина 77мм</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Installation Systems */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Системи за монтаж</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Предлагаме различни системи за монтаж според вашите архитектурни нужди
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
+                <img
+                  src="@assets/релсовия път да следва покрива_1756995220374.jpg"
+                  alt="Релсов път следващ покрива"
+                  className="w-full h-full object-contain bg-gray-50"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Релсов път следващ покрива
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Специална система, при която релсовият път следва формата на покрива за оптимално използване на пространството.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Следва формата на покрива</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Максимално използване на височината</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
+                <img
+                  src="@assets/стандартно плъзгане_1756995220374.jpg"
+                  alt="Стандартно плъзгане"
+                  className="w-full h-full object-contain bg-gray-50"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Стандартно плъзгане
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Класическа система за монтаж с релсов път, разположен успоредно на стената.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Лесен монтаж</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Надеждна конструкция</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
+                <img
+                  src="@assets/пружини в задна част на релсите_1756995220374.jpg"
+                  alt="Пружини в задната част"
+                  className="w-full h-full object-contain bg-gray-50"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Пружини в задната част
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Система с пружини в задната част на релсите за по-лесно управление и балансиране.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Балансирана система</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Лесно ръчно управление</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Автоматизация с Somfy</h3>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <img
+                  src="@assets/170_1756995278272.png"
+                  alt="Somfy Centreo спецификации"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="text-left">
+                <h4 className="text-xl font-semibold mb-4">Somfy Centreo серия</h4>
+                <p className="text-gray-600 mb-4">
+                  Професионална автоматизация с различни мощности и възможности за всеки тип ролетна врата.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">5 различни модела - Centreo 0 до Centreo 4</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">Максимален капацитет до 350 кг</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">IP X4 степен на защита</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm">CE съгласие EN 50081-1 и EN 50082-1</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
