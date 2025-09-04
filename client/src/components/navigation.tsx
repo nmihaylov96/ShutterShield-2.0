@@ -94,10 +94,10 @@ export function Navigation() {
                       {t.navigation.roller}
                     </button>
                     <button
-                      onClick={() => setLocation('/berry-doors')}
+                      onClick={() => setLocation('/automation')}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:text-blue-600 hover:bg-gray-50 transition-colors"
                     >
-                      {t.navigation.berry}
+                      {t.navigation.automation}
                     </button>
                   </div>
                 </div>
@@ -199,12 +199,12 @@ export function Navigation() {
             </button>
             <button
               onClick={() => {
-                setLocation('/berry-doors');
+                setLocation('/automation');
                 setMobileMenuOpen(false);
               }}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:text-blue-600"
             >
-              {t.navigation.berry}
+              {t.navigation.automation}
             </button>
             <button
               onClick={() => {
