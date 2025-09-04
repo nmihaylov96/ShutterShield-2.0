@@ -8,6 +8,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
 import { useLocation } from 'wouter';
 
+// Import MCA sectional door images
+import mcaWoodDesign from '@assets/IMG-fe64776c1aa455941441d40996ac3aaf-V_1757000294762.jpg';
+import mcaWithPedestrianDoor from '@assets/IMG-bd4043317dfad676f532743166ad5801-V_1757000294763.jpg';
+import mcaWhiteClassic from '@assets/20240909_180531_1757000294763.jpg';
+import mcaBrownHorizontal from '@assets/20250417_183831_1757000294763.jpg';
+import mcaIndustrial from '@assets/490644030_1496166088441324_79114404476998017_n_1757000294763.jpg';
+import mcaMultiple from '@assets/475166115_1006926747918460_2692043983858398704_n_1757000294764.jpg';
+import mcaDarkModern from '@assets/488823503_1490438199014113_6054773432221823488_n_1757000294764.jpg';
+
 export default function SectionalDoors() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
@@ -23,7 +32,7 @@ export default function SectionalDoors() {
     {
       id: 1,
       name: "MCA Секционна врата - Дървесен дизайн",
-      image: "@assets/IMG-fe64776c1aa455941441d40996ac3aaf-V_1757000294762.jpg",
+      image: mcaWoodDesign,
       material: "Стомана",
       thickness: "40мм",
       design: "Дървесен",
@@ -33,7 +42,7 @@ export default function SectionalDoors() {
     {
       id: 2,
       name: "MCA Секционна врата с интегрирана пешеходна врата",
-      image: "@assets/IMG-bd4043317dfad676f532743166ad5801-V_1757000294763.jpg",
+      image: mcaWithPedestrianDoor,
       material: "Стомана",
       thickness: "40мм",
       design: "С прозорци и пешеходна врата",
@@ -43,7 +52,7 @@ export default function SectionalDoors() {
     {
       id: 3,
       name: "MCA Класическа бяла секционна врата",
-      image: "@assets/20240909_180531_1757000294763.jpg",
+      image: mcaWhiteClassic,
       material: "Стомана",
       thickness: "40мм",
       design: "Гладка",
@@ -53,7 +62,7 @@ export default function SectionalDoors() {
     {
       id: 4,
       name: "MCA Кафява секционна врата - Хоризонтални линии",
-      image: "@assets/20250417_183831_1757000294763.jpg",
+      image: mcaBrownHorizontal,
       material: "Стомана",
       thickness: "40мм",
       design: "Хоризонтални линии",
@@ -63,7 +72,7 @@ export default function SectionalDoors() {
     {
       id: 5,
       name: "MCA Индустриална секционна врата - Бяла",
-      image: "@assets/490644030_1496166088441324_79114404476998017_n_1757000294763.jpg",
+      image: mcaIndustrial,
       material: "Стомана",
       thickness: "40мм",
       design: "Индустриална",
@@ -73,7 +82,7 @@ export default function SectionalDoors() {
     {
       id: 6,
       name: "MCA Множество секционни врати",
-      image: "@assets/475166115_1006926747918460_2692043983858398704_n_1757000294764.jpg",
+      image: mcaMultiple,
       material: "Стомана",
       thickness: "40мм",
       design: "Класическа",
@@ -83,7 +92,7 @@ export default function SectionalDoors() {
     {
       id: 7,
       name: "MCA Съвременна тъмна секционна врата",
-      image: "@assets/488823503_1490438199014113_6054773432221823488_n_1757000294764.jpg",
+      image: mcaDarkModern,
       material: "Стомана",
       thickness: "40мм",
       design: "Съвременна",
