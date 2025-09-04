@@ -1,20 +1,84 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
+import { ProductFilter } from '@/components/product-filter';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, ArrowLeft, Phone } from 'lucide-react';
+import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 
 export default function RollerDoors() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
+  const [filters, setFilters] = useState<any>({});
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Check for URL parameters to set initial filters
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    if (category) {
+      setFilters({ category });
+    }
+  }, []);
+
+  // Products for roller doors
+  const rollerDoorProducts = [
+    {
+      id: 1,
+      name: "Стоманена ролетна врата - Модел A",
+      image: "@assets/Снимка катеория Стоманена ролетна врата_1756995220376.jpg",
+      category: "steel",
+      material: "Стомана",
+      thickness: "0.6мм",
+      color: "RAL 9010",
+      description: "Икономична и здрава стоманена ролетна врата"
+    },
+    {
+      id: 2,
+      name: "Стоманена ролетна врата - Модел B",
+      image: "@assets/475190107_1007270957884039_5553773364182985176_n_1756995278271.jpg",
+      category: "steel",
+      material: "Стомана",
+      thickness: "0.8мм",
+      color: "RAL 7016",
+      description: "Усилена стоманена ролетна врата с по-голяма дебелина"
+    },
+    {
+      id: 3,
+      name: "Термоизолационна ролетна врата - Модел T1",
+      image: "@assets/Снимка категория Термоизолационна ролетна врата_1756995278273.png",
+      category: "thermal",
+      material: "Алуминий + PU пяна",
+      thickness: "77мм",
+      color: "RAL 9016",
+      description: "Висококачествена изолирана ролетна врата"
+    },
+    {
+      id: 4,
+      name: "Термоизолационна ролетна врата - Модел T2",
+      image: "@assets/Снимка категория Термоизолационна ролетна врата_1756995278273.png",
+      category: "thermal",
+      material: "Алуминий + PU пяна",
+      thickness: "77мм",
+      color: "RAL 7035",
+      description: "Премиум изолирана ролетна врата с отлична топлоизолация"
+    }
+  ];
+
+  // Filter products based on selected filters
+  const filteredProducts = rollerDoorProducts.filter(product => {
+    return Object.entries(filters).every(([key, value]) => {
+      if (!value) return true;
+      return product[key as keyof typeof product] === value;
+    });
+  });
 
   // Main categories for roller doors
   const rollerDoorCategories = [
@@ -175,12 +239,18 @@ export default function RollerDoors() {
                   <div className="flex gap-3">
                     <Button 
                       onClick={() => {
-                        const productInfo = `${category.title} - Ролетна гаражна врата`;
-                        setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
+                        setFilters({ category: category.category });
+                        // Scroll to products section
+                        setTimeout(() => {
+                          const element = document.getElementById('products-section');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 100);
                       }}
                       className="bg-primary-blue hover:bg-secondary-blue text-white flex-1"
                     >
-                      Поискай оферта
+                      Виж продуктите
                     </Button>
                     <Button 
                       variant="outline"
@@ -199,6 +269,123 @@ export default function RollerDoors() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products-section" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Нашите ролетни врати
+              </h2>
+              <p className="text-gray-600">
+                {filteredProducts.length} {filteredProducts.length === 1 ? 'продукт' : 'продукта'}
+                {Object.keys(filters).length > 0 && ' (филтрирани)'}
+              </p>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="flex border rounded-lg">
+                <Button
+                  variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setViewMode('grid')}
+                  className="rounded-r-none"
+                >
+                  <Grid className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant={viewMode === 'list' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setViewMode('list')}
+                  className="rounded-l-none"
+                >
+                  <List className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex gap-8">
+            {/* Filters Sidebar */}
+            <div className="w-64 flex-shrink-0">
+              <ProductFilter
+                onFilterChange={setFilters}
+                productType="roller"
+              />
+            </div>
+
+            {/* Products Grid/List */}
+            <div className="flex-1">
+              <div className={`grid gap-6 ${viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
+                {filteredProducts.map((product) => (
+                  <Card key={product.id} className={`overflow-hidden hover:shadow-lg transition-shadow ${viewMode === 'list' ? 'flex' : ''}`}>
+                    <div className={`relative ${viewMode === 'list' ? 'w-48 flex-shrink-0' : 'h-48'}`}>
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className={viewMode === 'list' ? 'flex-1' : ''}>
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">
+                          {product.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-4">
+                          {product.description}
+                        </p>
+                        
+                        <div className="space-y-2 mb-4 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Материал:</span>
+                            <span className="font-medium">{product.material}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Дебелина:</span>
+                            <span className="font-medium">{product.thickness}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Цвят:</span>
+                            <span className="font-medium">{product.color}</span>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-2">
+                          <Button
+                            onClick={() => {
+                              const productInfo = `${product.name} - ${product.description}`;
+                              setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
+                            }}
+                            className="bg-primary-blue hover:bg-secondary-blue text-white flex-1"
+                            size="sm"
+                          >
+                            Поискай оферта
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+
+              {filteredProducts.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-gray-500 text-lg">
+                    Няма продукти, отговарящи на избраните филтри
+                  </p>
+                  <Button
+                    variant="outline"
+                    onClick={() => setFilters({})}
+                    className="mt-4"
+                  >
+                    Изчисти филтрите
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
