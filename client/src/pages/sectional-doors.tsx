@@ -495,9 +495,9 @@ export default function SectionalDoors() {
                         </div>
                         <Button 
                           onClick={scrollToContact}
-                          className="w-full mt-4 bg-primary-orange hover:bg-primary-orange/90 text-white"
+                          className="w-full mt-4 bg-primary-blue hover:bg-primary-blue/90 text-white"
                         >
-                          Заявете оферта
+                          Поискай оферта
                         </Button>
                       </CardContent>
                     </div>
