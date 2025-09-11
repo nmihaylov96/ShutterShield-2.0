@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
+import { ProductFilter } from '@/components/product-filter';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, ArrowLeft, Phone } from 'lucide-react';
+import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
 import { useLocation } from 'wouter';
 
 // Import MCA sectional door images
@@ -20,6 +21,8 @@ export default function SectionalDoors() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [filters, setFilters] = useState<any>({});
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -35,6 +38,87 @@ export default function SectionalDoors() {
     mcaMultiple,
     mcaDarkModern
   ];
+
+  const sectionalDoorProducts = [
+    {
+      id: 1,
+      name: "MCA Секционна врата - Дървесен дизайн",
+      image: mcaWoodDesign,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Дървесен",
+      color: "Кафяво",
+      description: "Секционна врата с изискан дървесен дизайн от MCA"
+    },
+    {
+      id: 2,
+      name: "MCA Секционна врата с интегрирана пешеходна врата",
+      image: mcaWithPedestrianDoor,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "С прозорци и пешеходна врата",
+      color: "Кафяво",
+      description: "Модерна врата със стъклени панели и интегрирана пешеходна врата"
+    },
+    {
+      id: 3,
+      name: "MCA Класическа бяла секционна врата",
+      image: mcaWhiteClassic,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Гладка",
+      color: "Бяло",
+      description: "Класическа бяла секционна врата с оптимална термоизолация"
+    },
+    {
+      id: 4,
+      name: "MCA Кафява секционна врата - Хоризонтални линии",
+      image: mcaBrownHorizontal,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Хоризонтални линии",
+      color: "Кафяво",
+      description: "Елегантна кафява врата с хоризонтални декоративни линии"
+    },
+    {
+      id: 5,
+      name: "MCA Индустриална секционна врата - Бяла",
+      image: mcaIndustrial,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Индустриална",
+      color: "Бяло",
+      description: "Индустриална секционна врата за търговски обекти с мониторни системи"
+    },
+    {
+      id: 6,
+      name: "MCA Множество секционни врати",
+      image: mcaMultiple,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Класическа",
+      color: "Кафяво",
+      description: "Комплект от секционни врати за многогаражни обекти"
+    },
+    {
+      id: 7,
+      name: "MCA Съвременна тъмна секционна врата",
+      image: mcaDarkModern,
+      material: "Стомана",
+      thickness: "40мм",
+      design: "Съвременна",
+      color: "Тъмно сиво",
+      description: "Съвременна секционна врата в тъмен цвят с модерен дизайн"
+    }
+  ];
+
+  // Filter products based on selected filters
+  const filteredProducts = sectionalDoorProducts.filter(product => {
+    return Object.entries(filters).every(([key, value]) => {
+      if (!value) return true;
+      return product[key as keyof typeof product] === value;
+    });
+  });
 
   // Auto-rotate carousel
   useEffect(() => {
@@ -292,212 +376,113 @@ export default function SectionalDoors() {
         </div>
       </section>
 
-      {/* Panel Types Section */}
-      <section className="py-16 bg-white">
+      {/* Products Section with Filter */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Изберете типа панел за секционните врати
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Нашите секционни врати</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Предлагаме различни типове панели според вашите нужди - от класически до модерни дизайни с имитации на дърво
+              Разгледайте нашата богата колекция от секционни гаражни врати в различни стилове и цветове
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* RIB Panels */}
-            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="relative h-64">
-                <img
-                  src={mcaWoodDesign}
-                  alt="RIB панели"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  RIB панели
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Класически дизайн с хоризонтални ребра. Налични с повърхност Stucco или Woodgrain в множество цветове.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Повърхност Stucco или Woodgrain</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Над 15 стандартни цвята</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Имитации на дърво</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Устойчива на времето</span>
-                  </div>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-block w-6 h-6 bg-white border border-gray-300 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-amber-800 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-green-700 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-blue-700 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-gray-600 rounded"></span>
-                  <span className="text-sm text-gray-500">+10 още</span>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Filter Sidebar */}
+            <div className="lg:w-80">
+              <ProductFilter onFilterChange={setFilters} productType="sectional" />
+            </div>
 
-            {/* FLUSH Panels */}
-            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="relative h-64">
-                <img
-                  src={mcaWhiteClassic}
-                  alt="FLUSH панели"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  FLUSH панели
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Модерен минималистичен дизайн с гладка повърхност. Идеални за съвременни архитектурни стилове.
+            {/* Products Grid */}
+            <div className="flex-1">
+              {/* View Controls */}
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-gray-600">
+                  {`${filteredProducts.length} от ${sectionalDoorProducts.length} продукта`}
                 </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Гладка повърхност</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Съвременен дизайн</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Лесна поддръжка</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Специални покрития</span>
-                  </div>
+                <div className="flex gap-2">
+                  <Button
+                    variant={viewMode === 'grid' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('grid')}
+                    className="p-2"
+                  >
+                    <Grid className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant={viewMode === 'list' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('list')}
+                    className="p-2"
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-block w-6 h-6 bg-white border border-gray-300 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-gray-400 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-gray-600 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-black rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-orange-700 rounded"></span>
-                  <span className="text-sm text-gray-500">+5 още</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* MIDRIB Panels */}
-            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="relative h-64">
-                <img
-                  src={mcaBrownHorizontal}
-                  alt="MIDRIB панели"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  MIDRIB панели
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Комбинация от класически и модерен дизайн. Налични с Woodgrain или гладка повърхност.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Woodgrain или гладка повърхност</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Универсален дизайн</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Имитации на дърво</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Висока издръжливост</span>
-                  </div>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-block w-6 h-6 bg-white border border-gray-300 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-amber-800 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-yellow-600 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-amber-900 rounded"></span>
-                  <span className="text-sm text-gray-500">+8 още</span>
-                </div>
-              </CardContent>
-            </Card>
 
-            {/* Woodgrain Cassette Panels */}
-            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="relative h-64">
-                <img
-                  src={mcaDarkModern}
-                  alt="Woodgrain касета панели"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
+              {/* Products Grid/List */}
+              <div className={
+                viewMode === 'grid' 
+                  ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" 
+                  : "space-y-6"
+              }>
+                {filteredProducts.map((product) => (
+                  <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div className={viewMode === 'list' ? "flex" : ""}>
+                      <div className={viewMode === 'list' ? "w-1/3" : "relative h-48"}>
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <CardContent className={`p-4 ${viewMode === 'list' ? 'flex-1' : ''}`}>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                          {product.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-3">
+                          {product.description}
+                        </p>
+                        <div className="space-y-1 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Материал:</span>
+                            <span className="font-medium">{product.material}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Дебелина:</span>
+                            <span className="font-medium">{product.thickness}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Цвят:</span>
+                            <span className="font-medium">{product.color}</span>
+                          </div>
+                        </div>
+                        <Button 
+                          onClick={scrollToContact}
+                          className="w-full mt-4 bg-primary-orange hover:bg-primary-orange/90 text-white"
+                        >
+                          Заявете оферта
+                        </Button>
+                      </CardContent>
+                    </div>
+                  </Card>
+                ))}
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Woodgrain касета панели
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Премиум панели с касетен дизайн и Woodgrain повърхност за най-високо качество и естетика.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Касетен дизайн</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Woodgrain повърхност</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Премиум качество</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="text-sm text-gray-700">Елегантен вид</span>
-                  </div>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-block w-6 h-6 bg-white border border-gray-300 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-yellow-600 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-amber-800 rounded"></span>
-                  <span className="inline-block w-6 h-6 bg-red-900 rounded"></span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-lg text-gray-600 mb-6">
-              Всички панели се предлагат в дебелина 40мм с полиуретанова изолация за оптимална топло и звукоизолация.
-            </p>
-            <Button 
-              onClick={scrollToContact}
-              className="bg-primary-orange hover:bg-primary-orange/90 text-white px-8 py-3"
-            >
-              <Phone className="mr-2 h-5 w-5" />
-              Заявете консултация за панели
-            </Button>
+              {filteredProducts.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-gray-500 text-lg">
+                    Няма продукти, които да отговарят на избраните филтри.
+                  </p>
+                  <Button 
+                    onClick={() => setFilters({})}
+                    className="mt-4"
+                    variant="outline"
+                  >
+                    Изчисти филтрите
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
