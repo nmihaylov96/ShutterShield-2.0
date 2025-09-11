@@ -147,17 +147,54 @@ export default function SectionalDoors() {
     <div className="min-h-screen bg-white">
       <Navigation />
       
+      {/* Page Header */}
+      <section className="py-20 bg-primary-blue text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <Button 
+              variant="outline"
+              onClick={() => setLocation('/')}
+              className="flex items-center gap-2 border-white text-white hover:bg-white hover:text-primary-blue"
+              data-testid="button-back"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Назад
+            </Button>
+          </div>
+          
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Секционни гаражни врати
+            </h1>
+            <p className="text-xl text-gray-200 mb-8 max-w-3xl">
+              Най-популярното решение за гаражи. Компактни, надеждни и енергийно ефективни врати с отлична топлоизолация.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={scrollToContact}
+                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold"
+                data-testid="button-request-quote"
+              >
+                Поискайте оферта
+              </Button>
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold"
+                onClick={() => window.open('tel:087 678 2271', '_self')}
+                data-testid="button-call"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Обадете се
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Hero Section with decorative border */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button
-            variant="outline"
-            onClick={() => setLocation('/')}
-            className="mb-8 border-2 border-gray-300 text-gray-700 hover:bg-gray-100"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t.common.back}
-          </Button>
           
           {/* Decorative title with border */}
           <div className="text-center mb-12">
