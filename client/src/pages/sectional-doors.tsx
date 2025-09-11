@@ -114,10 +114,11 @@ export default function SectionalDoors() {
 
   // Filter products based on selected filters
   const filteredProducts = sectionalDoorProducts.filter(product => {
-    return Object.entries(filters).every(([key, value]) => {
-      if (!value) return true;
-      return product[key as keyof typeof product] === value;
-    });
+    if (filters.materials?.length > 0 && !filters.materials.includes(product.material)) return false;
+    if (filters.thickness?.length > 0 && !filters.thickness.includes(product.thickness)) return false;
+    if (filters.designs?.length > 0 && !filters.designs.includes(product.design)) return false;
+    if (filters.colors?.length > 0 && !filters.colors.includes(product.color)) return false;
+    return true;
   });
 
   // Auto-rotate carousel
@@ -154,7 +155,7 @@ export default function SectionalDoors() {
             <Button 
               variant="outline"
               onClick={() => setLocation('/')}
-              className="flex items-center gap-2 border-white text-white hover:bg-white hover:text-primary-blue"
+              className="flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-blue px-6 py-2"
               data-testid="button-back"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -494,7 +495,10 @@ export default function SectionalDoors() {
                           </div>
                         </div>
                         <Button 
-                          onClick={scrollToContact}
+                          onClick={() => {
+                            const productInfo = `${product.name} - Материал: ${product.material}, Дебелина: ${product.thickness}, Цвят: ${product.color}`;
+                            setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
+                          }}
                           className="w-full mt-4 bg-primary-blue hover:bg-primary-blue/90 text-white"
                         >
                           Поискай оферта
