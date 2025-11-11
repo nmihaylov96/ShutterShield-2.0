@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageDoors Pro - Professional Garage Door Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/dist/heroicons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#1e40af',
+                        'light-blue': '#3b82f6',
+                        'dark-gray': '#374151',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-white">
+    <!-- @COMPONENT: NavigationHeader -->
+    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-primary-blue">
+                        <i class="fas fa-warehouse mr-2"></i>
+                        GarageDoors Pro
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-dark-gray hover:text-primary-blue transition-colors font-medium">Home</a>
+                    <div class="relative group">
+                        <a href="#products" class="text-dark-gray hover:text-primary-blue transition-colors font-medium flex items-center">
+                            Products <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-64">
+                            <a href="#sectional" class="block px-4 py-2 text-dark-gray hover:bg-gray-50 hover:text-primary-blue transition-colors">Sectional Garage Doors</a>
+                            <a href="#roller" class="block px-4 py-2 text-dark-gray hover:bg-gray-50 hover:text-primary-blue transition-colors">Roller Garage Doors</a>
+                            <a href="#berry" class="block px-4 py-2 text-dark-gray hover:bg-gray-50 hover:text-primary-blue transition-colors">Berry-type Garage Doors</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="text-dark-gray hover:text-primary-blue transition-colors font-medium">About Us</a>
+                    <a href="#contact" class="text-dark-gray hover:text-primary-blue transition-colors font-medium">Contact</a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:+1234567890" class="text-primary-blue font-semibold">
+                        <i class="fas fa-phone mr-2"></i>
+                        (123) 456-7890
+                    </a>
+                    <button class="bg-primary-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-dark-gray" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden mt-4 pb-4" id="mobileMenu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-dark-gray hover:text-primary-blue transition-colors font-medium">Home</a>
+                    <a href="#sectional" class="text-dark-gray hover:text-primary-blue transition-colors font-medium pl-4">Sectional Garage Doors</a>
+                    <a href="#roller" class="text-dark-gray hover:text-primary-blue transition-colors font-medium pl-4">Roller Garage Doors</a>
+                    <a href="#berry" class="text-dark-gray hover:text-primary-blue transition-colors font-medium pl-4">Berry-type Garage Doors</a>
+                    <a href="#about" class="text-dark-gray hover:text-primary-blue transition-colors font-medium">About Us</a>
+                    <a href="#contact" class="text-dark-gray hover:text-primary-blue transition-colors font-medium">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: HeroBanner -->
+    <section id="home" class="pt-20 relative overflow-hidden">
+        <!-- Modern residential garage with sectional door and clean architectural lines -->
+        <div class="min-h-screen bg-cover bg-center bg-no-repeat relative" style="background-image: linear-gradient(rgba(30, 64, 175, 0.4), rgba(30, 64, 175, 0.4)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="container mx-auto px-4 py-32 relative z-10">
+                <div class="max-w-4xl">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                        Professional<br>
+                        <span class="text-yellow-400">Garage Door</span><br>
+                        Solutions
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
+                        Expert installation and service of premium garage doors, roller shutters, and automated systems. 
+                        Trusted by homeowners and businesses for over 15 years.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-yellow-400 text-dark-gray px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors font-semibold text-lg" data-event="click:learnMore">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Learn More
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-blue transition-colors font-semibold text-lg" data-event="click:getQuote">
+                            Get Free Quote
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Certified Installation Badge -->
+                <div class="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-lg p-4 max-w-xs">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-certificate text-primary-blue mr-2"></i>
+                        <span class="font-semibold text-dark-gray">Certified Installation</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Professional certified technicians with 15+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroBanner -->
+
+    <!-- @COMPONENT: FeaturesOverview -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Why Choose GarageDoors Pro?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We deliver exceptional quality, professional installation, and ongoing support for all your garage door needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="bg-primary-blue/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-2xl text-primary-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Expert Installation</h3>
+                    <p class="text-gray-600">Certified technicians ensure perfect installation every time with warranty coverage.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="bg-primary-blue/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-primary-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Premium Quality</h3>
+                    <p class="text-gray-600">Only the finest materials and leading brand partnerships for lasting durability.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="bg-primary-blue/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-2xl text-primary-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Fast Service</h3>
+                    <p class="text-gray-600">Quick response times and efficient installation to minimize disruption.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="bg-primary-blue/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-2xl text-primary-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Round-the-clock support and emergency repair services when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FeaturesOverview -->
+
+    <!-- @COMPONENT: ProductCategories -->
+    <section id="products" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Our Garage Door Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explore our comprehensive range of garage doors designed for residential and commercial applications.
+                </p>
+            </div>
+            
+            <!-- Sectional Garage Doors -->
+            <div id="sectional" class="mb-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-th-large text-3xl text-primary-blue mr-4"></i>
+                            <h3 class="text-3xl font-bold text-dark-gray">Sectional Garage Doors</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our sectional garage doors offer the perfect combination of durability, insulation, and style. 
+                            Made from high-quality materials with advanced thermal insulation, these doors provide excellent 
+                            energy efficiency and quiet operation.
+                        </p>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Superior thermal insulation (up to 67mm thickness)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Automatic operation with remote control</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Wide range of colors and finishes</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Advanced safety features</span>
+                            </div>
+                        </div>
+                        <button class="bg-primary-blue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold" data-event="click:viewSectionalGallery">
+                            View Gallery
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Modern white sectional garage door on contemporary house -->
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Modern sectional garage door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        <!-- Traditional wooden sectional garage door with glass panels -->
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Wooden sectional garage door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        <!-- Steel sectional door with window inserts -->
+                        <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Steel sectional door with windows" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        <!-- Contemporary sectional garage door on modern architecture -->
+                        <img src="https://pixabay.com/get/gd508a4dcf088c3e9f1358c2b508963569e3959ebdf15f112e7060d409fb2ea5701f78d2370ef9225f59ec5870ad153015c5ac49a545c08214e33f78f416a7648_1280.jpg" alt="Contemporary sectional garage" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Roller Garage Doors -->
+            <div id="roller" class="mb-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Compact roller shutter garage door in modern setting -->
+                            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Roller shutter garage door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                            <!-- Electric roller door with remote control -->
+                            <img src="https://pixabay.com/get/g4fe79a35553131c3619a2fbec57c24943b49e94314883f165e4a8e67eb4b6f5c4313d7be82e633de09573236bef05ad5a0399101ba3b1a9c92589af8b68172c2_1280.jpg" alt="Electric roller garage door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                            <!-- Insulated roller door with modern design -->
+                            <img src="https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Insulated roller door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                            <!-- Commercial roller shutter installation -->
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Commercial roller shutter" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-circle text-3xl text-primary-blue mr-4"></i>
+                            <h3 class="text-3xl font-bold text-dark-gray">Roller Garage Doors</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Space-saving roller garage doors are perfect for properties with limited driveway space. 
+                            These doors roll up into a compact housing above the opening, maximizing your garage space 
+                            while providing excellent security and weather protection.
+                        </p>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Space-saving vertical operation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Excellent security features</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Weather-resistant materials</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Low maintenance requirements</span>
+                            </div>
+                        </div>
+                        <button class="bg-primary-blue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold" data-event="click:viewRollerGallery">
+                            View Gallery
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Berry-type Garage Doors -->
+            <div id="berry" class="mb-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-layer-group text-3xl text-primary-blue mr-4"></i>
+                            <h3 class="text-3xl font-bold text-dark-gray">Berry-type Garage Doors</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Berry-type garage doors feature a unique folding mechanism that combines the benefits of 
+                            sectional and roller doors. These innovative doors offer exceptional flexibility and are 
+                            ideal for unique architectural requirements and challenging installations.
+                        </p>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Unique folding operation system</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Adaptable to unusual openings</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Premium materials and finishes</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-3"></i>
+                                <span class="text-gray-700">Custom design options</span>
+                            </div>
+                        </div>
+                        <button class="bg-primary-blue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold" data-event="click:viewBerryGallery">
+                            View Gallery
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Specialized folding garage door system -->
+                        <img src="https://pixabay.com/get/gf401e9d74b615a387b90b27b8076519110e1a9d617fade98c47f7d7efe3a84d776e70da474fe55486ec50e22c2dfba0f28fed7f6f5dea551ce4d3a09b501e3a1_1280.jpg" alt="Berry-type folding garage door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        <!-- Custom designed garage door with unique panels -->
+                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Custom garage door design" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        <!-- Premium residential garage with artistic panels -->
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Premium residential garage" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                        <!-- Modern architectural garage door solution -->
+                        <img src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Architectural garage door" class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProductCategories -->
+
+    <!-- @COMPONENT: ProcessSection -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Our Installation Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From consultation to completion, we ensure a smooth and professional experience every step of the way.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Consultation</h3>
+                    <p class="text-gray-600">Free on-site consultation to assess your needs and provide detailed quote.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-primary-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Design</h3>
+                    <p class="text-gray-600">Custom design and material selection to match your property perfectly.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-primary-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Installation</h3>
+                    <p class="text-gray-600">Professional installation by certified technicians with minimal disruption.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-primary-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Support</h3>
+                    <p class="text-gray-600">Ongoing maintenance and 24/7 support to keep your doors working perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProcessSection -->
+
+    <!-- @COMPONENT: AboutUsSection -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-dark-gray mb-6">About GarageDoors Pro</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        With over 15 years of experience in the garage door industry, GarageDoors Pro has established 
+                        itself as the leading provider of premium garage door solutions. We specialize in the installation, 
+                        maintenance, and repair of all types of garage doors and roller shutters.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Our team of certified technicians uses only the highest quality materials and latest technologies 
+                        to ensure your garage doors provide years of reliable, secure, and efficient operation.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-blue mb-2">500+</div>
+                            <div class="text-gray-600">Installations Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-blue mb-2">15+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-blue mb-2">24/7</div>
+                            <div class="text-gray-600">Emergency Support</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-blue mb-2">100%</div>
+                            <div class="text-gray-600">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-primary-blue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold" data-event="click:learnMoreAbout">
+                        Learn More About Us
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <!-- Professional garage door technician working on installation -->
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Professional technician installing garage door" class="rounded-xl shadow-2xl w-full h-auto" data-mock-image="true" />
+                    <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl max-w-xs">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-award text-yellow-500 mr-2"></i>
+                            <span class="font-semibold text-dark-gray">Certified Excellence</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Recognized for outstanding service and quality installations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutUsSection -->
+
+    <!-- @COMPONENT: TestimonialsSection -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it - hear from satisfied customers who trust us with their garage door needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex mb-4">
+                        <!-- @MAP: Array(5).fill().map((_, i) => ( -->
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <!-- @END_MAP )) -->
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Exceptional service from start to finish. The team was professional, punctual, and the installation 
+                        was flawless. Our new sectional door operates so smoothly and quietly."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <div class="font-semibold text-dark-gray" data-mock="true">Sarah Mitchell</div>
+                            <div class="text-sm text-gray-500" data-mock="true">Homeowner</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "We needed emergency repair service and they responded within 2 hours. Fixed our roller door quickly 
+                        and at a fair price. Highly recommend their 24/7 service."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            MJ
+                        </div>
+                        <div>
+                            <div class="font-semibold text-dark-gray" data-mock="true">Michael Johnson</div>
+                            <div class="text-sm text-gray-500" data-mock="true">Business Owner</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "The custom Berry-type door they designed for our unique space is absolutely perfect. 
+                        Amazing craftsmanship and attention to detail."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            ED
+                        </div>
+                        <div>
+                            <div class="font-semibold text-dark-gray" data-mock="true">Emily Davis</div>
+                            <div class="text-sm text-gray-500" data-mock="true">Architect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-gray mb-4">Get Your Free Quote Today</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to upgrade your garage door? Contact us for a free consultation and personalized quote.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-2xl font-semibold text-dark-gray mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-primary-blue/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-primary-blue"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-dark-gray">Phone</div>
+                                <div class="text-gray-600">(123) 456-7890</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary-blue/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary-blue"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-dark-gray">Email</div>
+                                <div class="text-gray-600" data-mock="true">info@garagedoorspro.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary-blue/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-blue"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-dark-gray">Address</div>
+                                <div class="text-gray-600" data-mock="true">123 Industrial Drive, Your City, ST 12345</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-primary-blue/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-primary-blue"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-dark-gray">Business Hours</div>
+                                <div class="text-gray-600">Mon-Fri: 8AM-6PM | Sat: 9AM-4PM</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                            <span class="font-semibold text-yellow-800">Emergency Service Available</span>
+                        </div>
+                        <p class="text-yellow-700">24/7 emergency repair service for urgent garage door issues.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-gray mb-6">Request Free Quote</h3>
+                    
+                    <form class="space-y-6" data-implementation="Should validate form and submit to backend">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-dark-gray mb-2">First Name *</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors" required data-bind="form.firstName" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-dark-gray mb-2">Last Name *</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors" required data-bind="form.lastName" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-gray mb-2">Email Address *</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors" required data-bind="form.email" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-gray mb-2">Phone Number *</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors" required data-bind="form.phone" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-gray mb-2">Door Type</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors" data-bind="form.doorType">
+                                <option value="">Select door type</option>
+                                <option value="sectional">Sectional Garage Door</option>
+                                <option value="roller">Roller Garage Door</option>
+                                <option value="berry">Berry-type Garage Door</option>
+                                <option value="repair">Repair Service</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-dark-gray mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors" placeholder="Tell us about your project..." data-bind="form.message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-blue text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg" data-event="click:submitQuote">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Quote Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-dark-gray text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <i class="fas fa-warehouse mr-2"></i>
+                        GarageDoors Pro
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Your trusted partner for professional garage door installation, repair, and maintenance services.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#sectional" class="text-gray-300 hover:text-white transition-colors">Sectional Garage Doors</a></li>
+                        <li><a href="#roller" class="text-gray-300 hover:text-white transition-colors">Roller Garage Doors</a></li>
+                        <li><a href="#berry" class="text-gray-300 hover:text-white transition-colors">Berry-type Garage Doors</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Garage Door Openers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Installation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Repair & Maintenance</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Emergency Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Free Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            (123) 456-7890
+                        </li>
+                        <li class="text-gray-300" data-mock="true">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@garagedoorspro.com
+                        </li>
+                        <li class="text-gray-300" data-mock="true">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Industrial Drive, Your City
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2024 GarageDoors Pro. All rights reserved. | 
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile Menu Toggle
+        (function() {
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        })();
+
+        // Smooth Scrolling for Navigation Links
+        (function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = 80; // Account for fixed header
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // Form Submission Handler
+        (function() {
+            const form = document.querySelector('form');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // TODO: Implement form validation and submission to backend
+                    console.log('Form submitted - implement backend integration');
+                    
+                    // Show success message (placeholder)
+                    alert('Thank you for your quote request! We will contact you within 24 hours.');
+                });
+            }
+        })();
+
+        // Button Click Handlers
+        (function() {
+            const buttons = document.querySelectorAll('[data-event^="click:"]');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.getAttribute('data-event').split(':')[1];
+                    
+                    switch(action) {
+                        case 'learnMore':
+                            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+                            break;
+                        case 'getQuote':
+                            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                            break;
+                        case 'viewSectionalGallery':
+                        case 'viewRollerGallery':
+                        case 'viewBerryGallery':
+                            // TODO: Implement gallery modal or separate page
+                            console.log('Gallery view - implement modal or page navigation');
+                            break;
+                        case 'submitQuote':
+                            // Form submission handled by form event listener
+                            break;
+                        default:
+                            console.log('Action not implemented:', action);
+                    }
+                });
+            });
+        })();
+
+        // Header Scroll Effect
+        (function() {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('shadow-xl');
+                } else {
+                    header.classList.remove('shadow-xl');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -66,20 +66,16 @@ export function Contact() {
   };
 
   const contactInfo = [
-    {
-      icon: <MapPin className="text-white" />,
-      title: t.contact.address,
-      content: 'ул. "Индустриална" 15\n6000 Стара Загора, България',
-    },
+
     {
       icon: <Phone className="text-white" />,
       title: t.contact.phone,
-      content: '+359 888 123 456\n+359 42 123 456',
+      content: '088 409 8889\n087 678 2271',
     },
     {
       icon: <Mail className="text-white" />,
       title: 'Email',
-      content: 'info@delicegarage.bg\nservice@delicegarage.bg',
+      content: 'contact@rolltech-doors.com',
     },
     {
       icon: <Clock className="text-white" />,
@@ -117,22 +113,6 @@ export function Contact() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Google Maps */}
-            <div className="mt-8">
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.0845!2d25.6241!3d42.4249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDI1JzI5LjYiTiAyNcKwMzknMjYuOCJF!5e0!3m2!1sen!2sbg!4v1639123456789!5m2!1sen!2sbg"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Delice Garage Location"
-                />
-              </div>
             </div>
           </div>
 
@@ -189,24 +169,33 @@ export function Contact() {
                   control={form.control}
                   name="service"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t.contact.form.service}</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder={t.contact.form.selectService} />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="sectional">{t.contact.form.services.sectional}</SelectItem>
-                          <SelectItem value="roller">{t.contact.form.services.roller}</SelectItem>
-                          <SelectItem value="berry">{t.contact.form.services.berry}</SelectItem>
-                          <SelectItem value="service">{t.contact.form.services.service}</SelectItem>
-                          <SelectItem value="consultation">{t.contact.form.services.consultation}</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
+<FormField
+  control={form.control}
+  name="service"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>{t.contact.form.service}</FormLabel>
+      <Select onValueChange={field.onChange} defaultValue={field.value}>
+        <FormControl>
+          <SelectTrigger>
+            <SelectValue placeholder={t.contact.form.selectService} />
+          </SelectTrigger>
+        </FormControl>
+        <SelectContent>
+          <SelectItem value="sectional">{'Секционни гаражни врати'}</SelectItem>
+          <SelectItem value="roller">{'Ролетни гаражни врати'}</SelectItem>
+          <SelectItem value="pedestrian">{'Пешеходни врати'}</SelectItem>
+          <SelectItem value="industrial-sectional">{'Индустриални секционни врати'}</SelectItem>
+          <SelectItem value="industrial-roller">{'Индустриални ролетни врати'}</SelectItem>
+          <SelectItem value="automation-sectional">{'Автоматика за секционни врати'}</SelectItem>
+          <SelectItem value="automation-roller">{'Автоматика за ролетни врати'}</SelectItem>
+        </SelectContent>
+      </Select>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
                   )}
                 />
                 

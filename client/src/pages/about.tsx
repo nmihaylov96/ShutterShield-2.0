@@ -156,26 +156,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="relative bg-gradient-to-r from-dark-navy to-primary-blue text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button
-            variant="outline"
-            onClick={() => setLocation('/')}
-            className="mb-8 border-white text-white hover:bg-white hover:text-primary-blue"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Назад
-          </Button>
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t.about.title}
-            </h1>
-            <p className="text-xl text-gray-200 mb-8">
-              Професионални решения за гаражни врати и автоматизация
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
       {/* About Content */}
       <section className="py-20 bg-white">

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { ProductFilter } from '@/components/product-filter';
@@ -5,8 +6,10 @@ import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, ArrowLeft, Phone, Grid, List } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
+
+// Original images for roller doors
+import rollerDoorsBg from '../components/img/garajni-sekcionni-header.jpg';
 
 export default function RollerDoors() {
   const { t } = useLanguage();
@@ -85,7 +88,7 @@ export default function RollerDoors() {
     {
       id: 1,
       title: "Стоманена ролетна врата",
-      image: "@assets/Снимка катеория Стоманена ролетна врата_1756995220376.jpg",
+      image: "/src/components/img/stomanena-roletna.jpg",
       description: "Здрави и икономични ролетни врати от стомана, идеални за производствени и складови помещения.",
       features: ["Висока устойчивост", "Лесна поддръжка", "Икономична цена", "Устойчивост на взлом"],
       category: "steel"
@@ -93,13 +96,12 @@ export default function RollerDoors() {
     {
       id: 2,
       title: "Термоизолационна ролетна врата",
-      image: "@assets/Снимка категория Термоизолационна ролетна врата_1756995278273.png",
+      image: "/src/components/img/termoizolacionna-roletna.png",
       description: "Алуминиеви ламели с пенополиуретанова пяна за перфектна комбинация от безопасност и комфорт.",
       features: ["Отлична топлоизолация", "Звукоизолация", "Висока здравина", "Дебелина 77мм"],
       category: "thermal"
     }
   ];
-
 
   const scrollToContact = () => {
     setLocation('/');
@@ -119,41 +121,92 @@ export default function RollerDoors() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-blue to-secondary-blue text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button
-            variant="outline"
-            onClick={() => setLocation('/')}
-            className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t.common.back}
-          </Button>
-          <div className="max-w-4xl">
+
+      {/* Page Header */}
+      <section
+        className="relative py-20 text-white bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${rollerDoorsBg})`,
+        }}
+      >
+        {/* Overlay за по-добър контраст на текста */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <Button
+              variant="outline"
+              onClick={() => setLocation('/')}
+              className="mb-8 border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary-blue font-semibold px-6 py-2"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t.common.back}
+            </Button>
+          </div>
+
+          <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t.products.roller.title}
+              Ролетни гаражни врати
             </h1>
-            <p className="text-xl text-gray-200 mb-8">
-              {t.products.roller.description}
+            <p className="text-xl md:text-2xl mb-4 max-w-3xl mx-auto">
+              Фирма „Ролтех“ ООД предлага практични и сигурни ролетни врати за гаражи, складове и производствени помещения, с възможност за автоматизация за максимален комфорт и енергоспестяване.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={scrollToContact}
-                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold rounded-none"
+                className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold"
               >
                 Поискайте оферта
               </Button>
               <Button
                 variant="outline"
-                className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold rounded-none"
-                onClick={() => window.open('tel:+359888123456', '_self')}
+                className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold"
+                onClick={() => window.open('tel:087 678 2271', '_self')}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                {t.hero.callUs}
+                Обадете се
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section with decorative border */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Decorative title with border */}
+          <div className="text-center mb-12">
+            <div className="relative">
+              {/* Orange line */}
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t-2 border-orange-400"></div>
+              </div>
+
+              {/* Text and logo side by side */}
+              <div className="relative inline-flex items-center">
+                <span className="bg-gray-50 px-6 text-4xl md:text-5xl font-bold text-gray-900">
+                  Ролетни гаражни врати
+                </span>
+
+                {/* Logo positioned above the line */}
+                <img
+                  src="src/components/img/logo.png"
+                  alt="Лого"
+                  className="h-8 md:h-9 w-auto ml-0 -mt-10"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Centered description */}
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Практични, сигурни и икономични решения за гаражи, складове и производствени помещения. 
+              Изберете между здрави стоманени врати за индустриална употреба или термоизолационни врати с алуминиеви ламели и PU пяна, 
+              осигуряващи отлична топло- и звукоизолация. С автоматизация Somfy получавате максимален комфорт, безопасност и енергоспестяване.
+            </p>
           </div>
         </div>
       </section>
@@ -189,7 +242,7 @@ export default function RollerDoors() {
             </div>
             <div>
               <img
-                src="@assets/csm_rollmatic_1_1000x700_c767c16ac2-700x441_1756995220375.jpg"
+                src="/src/components/img/roletni-garajni.jpg"
                 alt="Roller garage door"
                 className="rounded-lg shadow-lg w-full h-auto"
               />
@@ -202,190 +255,125 @@ export default function RollerDoors() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Изберете вида ролетна врата</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Типове ролетни врати</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Предлагаме два основни типа ролетни врати според вашите нужди и изисквания
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {rollerDoorCategories.map((category) => (
-              <Card key={category.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="relative h-64">
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {category.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    {category.description}
-                  </p>
-                  
-                  <div className="space-y-2 mb-6">
-                    {category.features.map((feature, index) => (
-                      <div key={index} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-3">
-                    <Button 
-                      onClick={() => {
-                        setFilters({ category: category.category });
-                        // Scroll to products section
-                        setTimeout(() => {
-                          const element = document.getElementById('products-section');
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }, 100);
-                      }}
-                      className="bg-primary-blue hover:bg-secondary-blue text-white flex-1"
-                    >
-                      Виж продуктите
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      onClick={() => {
-                        // Scroll to more information section
-                        const element = document.getElementById(`info-${category.category}`);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }}
-                      className="px-4"
-                    >
-                      Още информация
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section id="products-section" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Нашите ролетни врати
-              </h2>
-              <p className="text-gray-600">
-                {filteredProducts.length} {filteredProducts.length === 1 ? 'продукт' : 'продукта'}
-                {Object.keys(filters).length > 0 && ' (филтрирани)'}
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex border rounded-lg">
-                <Button
-                  variant={viewMode === 'grid' ? 'default' : 'ghost'}
-                  size="sm"
-                  onClick={() => setViewMode('grid')}
-                  className="rounded-r-none"
-                >
-                  <Grid className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant={viewMode === 'list' ? 'default' : 'ghost'}
-                  size="sm"
-                  onClick={() => setViewMode('list')}
-                  className="rounded-l-none"
-                >
-                  <List className="h-4 w-4" />
-                </Button>
+            <Card 
+              className="overflow-hidden hover:shadow-xl transition-all cursor-pointer group"
+              onClick={() => setLocation('/roller-doors-steel')}
+              data-testid="card-steel-roller"
+            >
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src="src/components/img/Снимка катеория Стоманена ролетна врата_1756995220376.jpeg"
+                  alt="Стоманена ролетна врата"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
-            </div>
-          </div>
-
-          <div className="flex gap-8">
-            {/* Filters Sidebar */}
-            <div className="w-64 flex-shrink-0">
-              <ProductFilter
-                onFilterChange={setFilters}
-                productType="roller"
-              />
-            </div>
-
-            {/* Products Grid/List */}
-            <div className="flex-1">
-              <div className={`grid gap-6 ${viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
-                {filteredProducts.map((product) => (
-                  <Card key={product.id} className={`overflow-hidden hover:shadow-lg transition-shadow ${viewMode === 'list' ? 'flex' : ''}`}>
-                    <div className={`relative ${viewMode === 'list' ? 'w-48 flex-shrink-0' : 'h-48'}`}>
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className={viewMode === 'list' ? 'flex-1' : ''}>
-                      <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">
-                          {product.name}
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-4">
-                          {product.description}
-                        </p>
-                        
-                        <div className="space-y-2 mb-4 text-sm">
-                          <div className="flex justify-between">
-                            <span className="text-gray-500">Материал:</span>
-                            <span className="font-medium">{product.material}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-500">Дебелина:</span>
-                            <span className="font-medium">{product.thickness}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-500">Цвят:</span>
-                            <span className="font-medium">{product.color}</span>
-                          </div>
-                        </div>
-
-                        <div className="flex gap-2">
-                          <Button
-                            onClick={() => {
-                              const productInfo = `${product.name} - ${product.description}`;
-                              setLocation(`/contact?product=${encodeURIComponent(productInfo)}`);
-                            }}
-                            className="bg-primary-blue hover:bg-secondary-blue text-white flex-1"
-                            size="sm"
-                          >
-                            Поискай оферта
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-
-              {filteredProducts.length === 0 && (
-                <div className="text-center py-12">
-                  <p className="text-gray-500 text-lg">
-                    Няма продукти, отговарящи на избраните филтри
-                  </p>
-                  <Button
-                    variant="outline"
-                    onClick={() => setFilters({})}
-                    className="mt-4"
-                  >
-                    Изчисти филтрите
-                  </Button>
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-blue transition-colors">
+                  Стоманена ролетна врата
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Здрави и икономични ролетни врати от стомана, идеални за производствени и складови помещения.
+                </p>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Висока устойчивост</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Лесна поддръжка</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Икономична цена</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Устойчивост на взлом</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Прахово боядисване по RAL</span>
+                  </div>
                 </div>
-              )}
-            </div>
+
+                <Button 
+                  className="w-full mt-4 bg-primary-blue text-white hover:bg-secondary-blue"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLocation('/roller-doors-steel');
+                  }}
+                  data-testid="button-learn-more-steel-roller"
+                >
+                  Научете повече
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card 
+              className="overflow-hidden hover:shadow-xl transition-all cursor-pointer group"
+              onClick={() => setLocation('/roller-doors-thermal')}
+              data-testid="card-thermal-roller"
+            >
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src="src/components/img/Термоизолационна.jpg"
+                  alt="Термоизолационна ролетна врата"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-blue transition-colors">
+                  Термоизолационна ролетна врата
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Алуминиеви ламели с пенополиуретанова пяна за перфектна комбинация от безопасност и комфорт.
+                </p>
+                
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Отлична топлоизолация</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Звукоизолация</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Висока здравина</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Дебелина 77мм</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    <span className="text-sm text-gray-700">Енергоспестяваща</span>
+                  </div>
+                </div>
+
+                <Button 
+                  className="w-full mt-4 bg-primary-blue text-white hover:bg-secondary-blue"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLocation('/roller-doors-thermal');
+                  }}
+                  data-testid="button-learn-more-thermal-roller"
+                >
+                  Научете повече
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -426,7 +414,7 @@ export default function RollerDoors() {
               </div>
               <div>
                 <img
-                  src="@assets/475190107_1007270957884039_5553773364182985176_n_1756995278271.jpg"
+                  src="src/components/img/csm_rollmatic_1_1000x700_c767c16ac2-700x441.jpeg"
                   alt="Steel roller door"
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
@@ -439,7 +427,7 @@ export default function RollerDoors() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
                 <img
-                  src="@assets/ролетна-врата-за-гараж-термо-ламел_1756995220376.jpg"
+                  src="src/components/img/Термоизолация-фон.jpg"
                   alt="Thermal roller door"
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
@@ -476,110 +464,17 @@ export default function RollerDoors() {
         </div>
       </section>
 
-      {/* Technical Installation Systems */}
+      {/* Automation Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Системи за монтаж</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Предлагаме различни системи за монтаж според вашите архитектурни нужди
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="@assets/релсовия път да следва покрива_1756995220374.jpg"
-                  alt="Релсов път следващ покрива"
-                  className="w-full h-full object-contain bg-gray-50"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Релсов път следващ покрива
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Специална система, при която релсовият път следва формата на покрива за оптимално използване на пространството.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Следва формата на покрива</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Максимално използване на височината</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="@assets/стандартно плъзгане_1756995220374.jpg"
-                  alt="Стандартно плъзгане"
-                  className="w-full h-full object-contain bg-gray-50"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Стандартно плъзгане
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Класическа система за монтаж с релсов път, разположен успоредно на стената.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Лесен монтаж</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Надеждна конструкция</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="@assets/пружини в задна част на релсите_1756995220374.jpg"
-                  alt="Пружини в задната част"
-                  className="w-full h-full object-contain bg-gray-50"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Пружини в задната част
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Система с пружини в задната част на релсите за по-лесно управление и балансиране.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Балансирана система</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Лесно ръчно управление</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Автоматизация с Somfy</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Автоматизация със Somfy</h3>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <img
-                  src="@assets/170_1756995278272.png"
+                  src="src/components/img/download.png"
                   alt="Somfy Centreo спецификации"
-                  className="w-full h-auto rounded-lg shadow-lg"
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
               <div className="text-left">
@@ -617,15 +512,25 @@ export default function RollerDoors() {
           <h2 className="text-3xl font-bold mb-4">
             Готови сте за нова ролетна гаражна врата?
           </h2>
-          <p className="text-xl text-gray-200 mb-8">
+          <p className="text-xl mb-8 text-gray-200">
             Свържете се с нас за безплатна консултация и оферта
           </p>
-          <Button
-            onClick={scrollToContact}
-            className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold text-lg"
-          >
-            Свържете се с нас
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={scrollToContact}
+              className="bg-yellow-accent text-gray-900 px-8 py-3 hover:bg-yellow-500 font-semibold"
+            >
+              {t.common.requestQuote}
+            </Button>
+            <Button
+              variant="outline"
+              className="border-2 border-white text-white bg-transparent px-8 py-3 hover:bg-white hover:text-primary-blue font-semibold"
+              onClick={() => window.open('tel:087 678 2271', '_self')}
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Обадете се сега
+            </Button>
+          </div>
         </div>
       </section>
 

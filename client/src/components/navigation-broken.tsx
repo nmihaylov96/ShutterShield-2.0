@@ -97,12 +97,7 @@ export function Navigation() {
                 </div>
               </div>
               
-              <button
-                onClick={() => setLocation('/services')}
-                className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium"
-              >
-                {t.navigation.services}
-              </button>
+              
               
               <button
                 onClick={() => setLocation('/about')}

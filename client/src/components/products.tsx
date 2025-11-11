@@ -44,10 +44,10 @@ export function Products() {
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
+      "/src/components/img/garajna-vrata.jpg",
+      "/src/components/img/industrialna-vrata.jpg",
+      "/src/components/img/sekcionna-vrata.jpg",
+      "/src/components/img/vhodna-vrata.jpg",
     ]
   };
 
@@ -66,7 +66,7 @@ export function Products() {
           <Card id="sectional" className="hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
             <div className="relative h-64 overflow-hidden rounded-t-lg">
               <img
-                src={productImages.sectional[0]}
+                src="https://www.si-plast82.com/galery2/11.jpg"
                 alt="Sectional garage door"
                 className="w-full h-full object-cover"
               />
@@ -94,7 +94,7 @@ export function Products() {
           <Card id="roller" className="hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
             <div className="relative h-64 overflow-hidden rounded-t-lg">
               <img
-                src={productImages.roller[0]}
+                src="https://www.ecogaragedoors.com.au/wp-content/uploads/2021/03/142_Roller-Door-Night-Sky-with-pelmet-Jambs.jpg"
                 alt="Roller garage door"
                 className="w-full h-full object-cover"
               />
@@ -122,7 +122,7 @@ export function Products() {
           <Card id="industrial" className="hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
             <div className="relative h-64 overflow-hidden rounded-t-lg">
               <img
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                src="https://alisterm.com/wp-content/uploads/2020/03/industrialni-vrati-korica.jpg"
                 alt="Industrial sectional garage door"
                 className="w-full h-full object-cover"
               />
@@ -149,8 +149,8 @@ export function Products() {
                 </div>
               </div>
               <div className="text-center mt-auto">
-                <Button onClick={() => setLocation('/industrial-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
-                  Научете повече
+                <Button onClick={() => setLocation('/industrial-sectional-doors')} className="bg-primary-blue hover:bg-secondary-blue text-white px-6 py-2 font-medium">
+                  {t.products.learnMore}
                 </Button>
               </div>
             </CardContent>
@@ -158,16 +158,17 @@ export function Products() {
         </div>
 
         {/* Featured Products Gallery */}
-        <Card className="p-8">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">{t.products.gallery}</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {productImages.gallery.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Project ${index + 1}`}
-                className="rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
-              />
+<Card className="p-8">
+  <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">{t.products.gallery}</h3>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {productImages.gallery.map((image, index) => (
+      <img
+        key={index}
+        src={image}
+        alt={`Project ${index + 1}`}
+        className="rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+        style={{ width: "232.2px", height: "174.15px", objectFit: "cover" }}
+      />
             ))}
           </div>
         </Card>

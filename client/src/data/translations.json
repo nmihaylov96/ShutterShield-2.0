@@ -12,8 +12,8 @@
       "freeQuote": "Безплатна оферта"
     },
     "hero": {
-      "title": "Най-добрите Гаражни Врати",
-      "subtitle": "Професионален монтаж и сервиз на гаражни врати Hörmann. Сертифицирани специалисти с над 15 години опит.",
+      "title": "РОЛТЕХ ООД",
+      "subtitle": "Професионален монтаж и сервиз на гаражни врати MCA. Сертифицирани специалисти с над 5 години опит.",
       "learnMore": "Научете повече",
       "callUs": "Обадете се",
       "stats": {
@@ -25,7 +25,7 @@
     },
     "products": {
       "title": "Нашите Продукти",
-      "subtitle": "Предлагаме широка гама от висококачествени гаражни врати Hörmann, подходящи за всяко приложение",
+      "subtitle": "Предлагаме широка гама от висококачествени гаражни врати MCA, подходящи за всяко приложение",
       "sectional": {
         "title": "Секционни Гаражни Врати",
         "description": "Най-популярният избор за жилищни гаражи. Отлична топлоизолация и много дизайнерски възможности.",
@@ -41,7 +41,7 @@
         "description": "Стилни врати с уникален дизайн. Перфектно съчетание на естетика и функционалност.",
         "features": ["Уникален дизайн", "Висока устойчивост", "Богата цветова гама"]
       },
-      "learnMore": "Повече info",
+      "learnMore": "Научете повече",
       "gallery": "Нашите Реализации"
     },
     "services": {
@@ -79,8 +79,8 @@
     },
     "about": {
       "title": "За Ролтех",
-      "description": "С над 15 години опит в индустрията, Ролтех е водещ доставчик на високококачествени гаражни врати в България. Като сертифициран партньор на Hörmann, ние предлагаме най-добрите продукти и услуги на пазара.",
-      "team": "Нашият екип от сертифицирани специалисти е обучен да предоставя професионален монтаж и поддръжка, гарантирайки дълготрайна и безпроблемна работа на вратите Ви.",
+      "description": "„Ролтех „ ООД е основана от млади специалисти с богат опит в изработката, монтажа и поддръжката на всички видове гаражни,индустриални, портални и плъзгащи се врати. Фирмата е създадена с цел предоставяне на цялостни комплексни и ефективни решения при избора Ви за врата за дома и бизнеса.",
+      "team": "С над 500 реализирани поръчки ,нашият екип предлага доказано качествени услуги и на първо място приятелско и любезно отношение към всеки наш клиент!",
       "stats": {
         "doors": "Инсталирани врати",
         "experience": "Години опит",
@@ -128,7 +128,7 @@
       "consultation": "Консултация",
       "warranty": "Гаранция",
       "contact": "Контакти",
-      "copyright": "© 2024 Ролтех. Всички права запазени."
+      "copyright": "© 2025 Ролтех. Всички права запазени."
     },
     "common": {
       "readMore": "Виж още",
@@ -242,8 +242,8 @@
     },
     "about": {
       "title": "About Roltech",
-      "description": "With over 15 years of experience in the industry, Roltech is a leading provider of high-quality garage doors in Bulgaria. As a certified Hörmann partner, we offer the best products and services on the market.",
-      "team": "Our team of certified specialists is trained to provide professional installation and maintenance, ensuring long-lasting and trouble-free operation of your doors.",
+      "description": "Roltech Ltd. manufactures, supplies, and installs metal and thermally insulated garage and industrial roller shutters, sectional doors, and automation systems.",
+      "team": "Our team of specialists is trained to provide professional installation and maintenance, ensuring long-lasting and trouble-free operation of your doors.",
       "stats": {
         "doors": "Installed doors",
         "experience": "Years experience",

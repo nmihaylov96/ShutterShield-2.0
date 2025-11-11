@@ -97,12 +97,12 @@ export default function Contact() {
     {
       icon: <Phone className="text-white" />,
       title: t.contact.phone,
-      content: '087 678 2271',
+      content: '088 409 8889\n087 678 2271',
     },
     {
       icon: <Mail className="text-white" />,
       title: 'Email',
-      content: 'rolltech2020@gmail.com',
+      content: 'contact@rolltech-doors.com',
     },
     {
       icon: <Clock className="text-white" />,

@@ -10,61 +10,64 @@
   --card-foreground: hsl(210, 25%, 7.8431%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(210, 25%, 7.8431%);
-  --primary: hsl(217.2, 91.2%, 59.8%);
+  --primary: hsl(0, 72%, 45%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(210, 40%, 98%);
-  --secondary-foreground: hsl(217.2, 32.6%, 17.5%);
-  --muted: hsl(210, 40%, 96%);
-  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-  --accent: hsl(210, 40%, 94%);
-  --accent-foreground: hsl(217.2, 32.6%, 17.5%);
-  --destructive: hsl(0, 84.2%, 60.2%);
+  --secondary: hsl(0, 55%, 40%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 20%, 95%);
+  --muted-foreground: hsl(0, 0%, 40%);
+  --accent: hsl(0, 68%, 50%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --input: hsl(214.3, 31.8%, 91.4%);
-  --ring: hsl(217.2, 91.2%, 59.8%);
-  --chart-1: hsl(217.2, 91.2%, 59.8%);
-  --chart-2: hsl(159.7826, 100%, 36.0784%);
-  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
-  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
-  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
-  
-  /* Custom colors for garage door company - Professional Blue style */
-  --primary-blue: hsl(220, 50%, 35%);
-  --secondary-blue: hsl(220, 55%, 30%);
-  --accent-blue: hsl(220, 60%, 40%);
-  --dark-navy: hsl(220, 55%, 25%);
-  --light-blue: hsl(220, 45%, 50%);
-  
+  --border: hsl(0, 10%, 90%);
+  --input: hsl(0, 10%, 90%);
+  --ring: hsl(0, 72%, 45%);
+  --chart-1: hsl(0, 72%, 45%);
+  --chart-2: hsl(8, 82%, 55%);
+  --chart-3: hsl(14, 80%, 45%);
+  --chart-4: hsl(355, 60%, 35%);
+  --chart-5: hsl(345, 70%, 40%);
+
+  /* Custom colors for garage door company - Professional Red style */
+  --primary-blue: hsl(0, 72%, 45%); /* Основен червен */
+  --secondary-blue: hsl(0, 65%, 40%); /* По-тъмен червен */
+  --accent-blue: hsl(0, 80%, 50%); /* Акцентен ярък червен */
+  --dark-navy: hsl(0, 70%, 30%); /* Много тъмен бордо нюанс */
+  --light-blue: hsl(0, 70%, 60%); /* Светъл червен за hover */
+
+  /* Optional accent */
+  --yellow-accent: hsl(42, 90%, 55%);
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --radius: 0rem;
 }
 
 .dark {
-  --background: hsl(217.2, 32.6%, 17.5%);
-  --foreground: hsl(210, 40%, 98%);
-  --card: hsl(217.2, 32.6%, 17.5%);
-  --card-foreground: hsl(210, 40%, 98%);
-  --popover: hsl(217.2, 32.6%, 17.5%);
-  --popover-foreground: hsl(210, 40%, 98%);
-  --primary: hsl(217.2, 91.2%, 59.8%);
+  --background: hsl(0, 0%, 10%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 15%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --popover: hsl(0, 0%, 15%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --primary: hsl(0, 70%, 55%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(217.2, 32.6%, 17.5%);
-  --secondary-foreground: hsl(210, 40%, 98%);
-  --muted: hsl(217.2, 32.6%, 17.5%);
-  --muted-foreground: hsl(215, 20.2%, 65.1%);
-  --accent: hsl(217.2, 32.6%, 17.5%);
-  --accent-foreground: hsl(210, 40%, 98%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --border: hsl(217.2, 32.6%, 17.5%);
-  --input: hsl(217.2, 32.6%, 17.5%);
-  --ring: hsl(217.2, 91.2%, 59.8%);
-  --chart-1: hsl(217.2, 91.2%, 59.8%);
-  --chart-2: hsl(159.7826, 100%, 36.0784%);
-  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
-  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
-  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
+  --secondary: hsl(0, 60%, 25%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 20%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(0, 70%, 40%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 70%, 35%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 25%);
+  --input: hsl(0, 0%, 25%);
+  --ring: hsl(0, 70%, 55%);
+  --chart-1: hsl(0, 70%, 55%);
+  --chart-2: hsl(10, 80%, 50%);
+  --chart-3: hsl(350, 70%, 45%);
+  --chart-4: hsl(0, 65%, 35%);
+  --chart-5: hsl(5, 75%, 40%);
 }
 
 @layer base {

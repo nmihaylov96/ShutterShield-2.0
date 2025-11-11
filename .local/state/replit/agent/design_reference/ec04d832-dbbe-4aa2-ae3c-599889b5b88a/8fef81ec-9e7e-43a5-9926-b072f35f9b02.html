@@ -1,0 +1,815 @@
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delice Garage - Професионални Гаражни Врати</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#2563EB',
+                        'secondary-blue': '#1E40AF',
+                        'accent-blue': '#3B82F6',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-white">
+    <!-- @COMPONENT: Navigation [responsive navbar with language switcher] -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="text-2xl font-bold text-primary-blue">
+                        <i class="fas fa-door-open mr-2"></i>
+                        Delice Garage
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">Начало</a>
+                        <div class="relative group">
+                            <a href="#products" class="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium flex items-center">
+                                Продукти <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="#sectional" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue">Секционни гаражни врати</a>
+                                    <a href="#roller" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue">Ролетни гаражни врати</a>
+                                    <a href="#berry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-blue">Гаражни врати Berry</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#services" class="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">Услуги</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">За нас</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">Контакти</a>
+                    </div>
+                </div>
+
+                <!-- Language Switcher & CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="language-btn active px-3 py-1 text-sm font-medium bg-primary-blue text-white rounded">BG</button>
+                        <button class="language-btn px-3 py-1 text-sm font-medium text-gray-600 hover:text-primary-blue rounded">EN</button>
+                    </div>
+                    <a href="#contact" class="bg-primary-blue text-white px-6 py-2 rounded-md hover:bg-secondary-blue transition-colors duration-200 font-medium">
+                        Безплатна оферта
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-toggle text-gray-700 hover:text-primary-blue focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary-blue font-medium">Начало</a>
+                <a href="#sectional" class="block px-3 py-2 text-gray-700 hover:text-primary-blue">Секционни гаражни врати</a>
+                <a href="#roller" class="block px-3 py-2 text-gray-700 hover:text-primary-blue">Ролетни гаражни врати</a>
+                <a href="#berry" class="block px-3 py-2 text-gray-700 hover:text-primary-blue">Гаражни врати Berry</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary-blue font-medium">Услуги</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary-blue font-medium">За нас</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-blue font-medium">Контакти</a>
+                <div class="flex items-center space-x-2 px-3 py-2">
+                    <button class="language-btn active px-3 py-1 text-sm font-medium bg-primary-blue text-white rounded">BG</button>
+                    <button class="language-btn px-3 py-1 text-sm font-medium text-gray-600 hover:text-primary-blue rounded">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section [main banner with call-to-action] -->
+    <section id="home" class="relative bg-gradient-to-r from-primary-blue to-secondary-blue text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <!-- Modern house exterior with garage -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080');"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <span class="text-bg">Най-добрите</span><br>
+                    <span class="text-bg">Гаражни Врати</span><br>
+                    <span class="text-yellow-300 text-en hidden">Best Garage Doors</span>
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed text-bg">
+                    Професионален монтаж и сервиз на гаражни врати Hörmann. Сертифицирани специалисти с над 15 години опит.
+                </p>
+                <p class="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed text-en hidden">
+                    Professional installation and service of Hörmann garage doors. Certified specialists with over 15 years of experience.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors duration-200 font-semibold text-center text-bg">
+                        Научете повече
+                    </a>
+                    <a href="#contact" class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors duration-200 font-semibold text-center text-en hidden">
+                        Learn More
+                    </a>
+                    <a href="tel:+359888123456" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-blue transition-all duration-200 font-semibold text-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span class="text-bg">Обадете се</span>
+                        <span class="text-en hidden">Call Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="relative bg-white bg-opacity-95 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl font-bold text-primary-blue mb-1">15+</div>
+                        <div class="text-sm text-gray-600 text-bg">години опит</div>
+                        <div class="text-sm text-gray-600 text-en hidden">years experience</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl font-bold text-primary-blue mb-1">500+</div>
+                        <div class="text-sm text-gray-600 text-bg">монтирани врати</div>
+                        <div class="text-sm text-gray-600 text-en hidden">installed doors</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl font-bold text-primary-blue mb-1">24/7</div>
+                        <div class="text-sm text-gray-600 text-bg">техническа поддръжка</div>
+                        <div class="text-sm text-gray-600 text-en hidden">technical support</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl font-bold text-primary-blue mb-1">100%</div>
+                        <div class="text-sm text-gray-600 text-bg">доволни клиенти</div>
+                        <div class="text-sm text-gray-600 text-en hidden">satisfied clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Products Section [main product categories showcase] -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 text-bg">Нашите Продукти</h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 text-en hidden">Our Products</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto text-bg">
+                    Предлагаме широка гама от висококачествени гаражни врати Hörmann, подходящи за всяко приложение
+                </p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto text-en hidden">
+                    We offer a wide range of high-quality Hörmann garage doors suitable for any application
+                </p>
+            </div>
+
+            <!-- @MAP: productCategories.map(category => ( -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Sectional Garage Doors -->
+                <div id="sectional" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Professional sectional garage door installation -->
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Sectional garage door" class="w-full h-64 object-cover" data-mock="true" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-bg">Секционни Гаражни Врати</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-en hidden">Sectional Garage Doors</h3>
+                        <p class="text-gray-600 mb-6 text-bg">
+                            Най-популярният избор за жилищни гаражи. Отлична топлоизолация и много дизайнерски възможности.
+                        </p>
+                        <p class="text-gray-600 mb-6 text-en hidden">
+                            The most popular choice for residential garages. Excellent thermal insulation and many design options.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Отлична топлоизолация</span>
+                                <span class="text-en hidden">Excellent thermal insulation</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Тихо отваряне</span>
+                                <span class="text-en hidden">Quiet operation</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Автоматизация</span>
+                                <span class="text-en hidden">Automation ready</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary-blue" data-bind="product.price">от 3,200 лв.</span>
+                            <a href="#contact" class="bg-primary-blue text-white px-6 py-2 rounded-md hover:bg-secondary-blue transition-colors">
+                                <span class="text-bg">Повече info</span>
+                                <span class="text-en hidden">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roller Garage Doors -->
+                <div id="roller" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Modern roller garage door system -->
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Roller garage door" class="w-full h-64 object-cover" data-mock="true" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-bg">Ролетни Гаражни Врати</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-en hidden">Roller Garage Doors</h3>
+                        <p class="text-gray-600 mb-6 text-bg">
+                            Компактно решение, идеално за ограничено пространство. Надеждни и лесни за поддържане.
+                        </p>
+                        <p class="text-gray-600 mb-6 text-en hidden">
+                            Compact solution, ideal for limited space. Reliable and easy to maintain.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Пестене на място</span>
+                                <span class="text-en hidden">Space saving</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Лесна поддръжка</span>
+                                <span class="text-en hidden">Easy maintenance</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Защита от взлом</span>
+                                <span class="text-en hidden">Security protection</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary-blue" data-bind="product.price">от 2,800 лв.</span>
+                            <a href="#contact" class="bg-primary-blue text-white px-6 py-2 rounded-md hover:bg-secondary-blue transition-colors">
+                                <span class="text-bg">Повече info</span>
+                                <span class="text-en hidden">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Berry-Type Garage Doors -->
+                <div id="berry" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Berry-type garage door with wood grain finish -->
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Berry-type garage door" class="w-full h-64 object-cover" data-mock="true" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-bg">Гаражни Врати Berry</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-en hidden">Berry-Type Garage Doors</h3>
+                        <p class="text-gray-600 mb-6 text-bg">
+                            Стилни врати с уникален дизайн. Перфектно съчетание на естетика и функционалност.
+                        </p>
+                        <p class="text-gray-600 mb-6 text-en hidden">
+                            Stylish doors with unique design. Perfect combination of aesthetics and functionality.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Уникален дизайн</span>
+                                <span class="text-en hidden">Unique design</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Висока устойчивост</span>
+                                <span class="text-en hidden">High durability</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-bg">Богата цветова гама</span>
+                                <span class="text-en hidden">Rich color range</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary-blue" data-bind="product.price">от 3,800 лв.</span>
+                            <a href="#contact" class="bg-primary-blue text-white px-6 py-2 rounded-md hover:bg-secondary-blue transition-colors">
+                                <span class="text-bg">Повече info</span>
+                                <span class="text-en hidden">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP -->
+
+            <!-- Featured Products Gallery -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center text-gray-900 mb-8 text-bg">Нашите Реализации</h3>
+                <h3 class="text-2xl font-bold text-center text-gray-900 mb-8 text-en hidden">Our Projects</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Completed garage door installation project -->
+                    <img src="https://pixabay.com/get/g8b98a592e09539a76cceaea352b1e7c25b312c78f3d3baf35b3ee5202a47042d9f19ec8e5b4f8f7bbc38c7d732e6fb219b07575dd42e9fda362e0449730d3f70_1280.jpg" alt="Project 1" class="rounded-lg shadow hover:shadow-lg transition-shadow" data-mock="true" />
+                    <!-- Professional garage door installation -->
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Project 2" class="rounded-lg shadow hover:shadow-lg transition-shadow" data-mock="true" />
+                    <!-- Modern sectional garage door -->
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Project 3" class="rounded-lg shadow hover:shadow-lg transition-shadow" data-mock="true" />
+                    <!-- Quality garage door service -->
+                    <img src="https://pixabay.com/get/g14a53c0edeb66ee976d2e39cb98683c96c2716c077eeda2f6b6335316a11389918584392c144a924338f356aa77739aa9223af1001bdde2a62dc56ef757c3a34_1280.jpg" alt="Project 4" class="rounded-lg shadow hover:shadow-lg transition-shadow" data-mock="true" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Products Section -->
+
+    <!-- @COMPONENT: Services Section [professional services showcase] -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 text-bg">Нашите Услуги</h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 text-en hidden">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto text-bg">
+                    Пълен спектър от услуги - от консултация до монтаж и сервиз
+                </p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto text-en hidden">
+                    Complete range of services - from consultation to installation and maintenance
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-bg">Професионален Монтаж</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-en hidden">Professional Installation</h3>
+                    <p class="text-gray-600 text-bg">Сертифицирани техници с дългогодишен опит</p>
+                    <p class="text-gray-600 text-en hidden">Certified technicians with years of experience</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-wrench text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-bg">Техническо Обслужване</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-en hidden">Technical Service</h3>
+                    <p class="text-gray-600 text-bg">24/7 аварийна поддръжка и редовни прегледи</p>
+                    <p class="text-gray-600 text-en hidden">24/7 emergency support and regular inspections</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-bg">Гаранция</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-en hidden">Warranty</h3>
+                    <p class="text-gray-600 text-bg">Пълна гаранция на продукти и услуги</p>
+                    <p class="text-gray-600 text-en hidden">Complete warranty on products and services</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-bg">Консултация</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-en hidden">Consultation</h3>
+                    <p class="text-gray-600 text-bg">Безплатна консултация и оглед на място</p>
+                    <p class="text-gray-600 text-en hidden">Free consultation and on-site inspection</p>
+                </div>
+            </div>
+
+            <!-- Certification Section -->
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8 lg:p-12">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 lg:pr-8">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4 text-bg">Сертифицирани от Hörmann</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4 text-en hidden">Certified by Hörmann</h3>
+                        <p class="text-gray-600 mb-6 text-bg">
+                            Ние сме официален партньор на Hörmann за България. Това гарантира най-високото качество на монтаж и сервиз.
+                        </p>
+                        <p class="text-gray-600 mb-6 text-en hidden">
+                            We are an official Hörmann partner for Bulgaria. This guarantees the highest quality of installation and service.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-certificate text-yellow-500 mr-3"></i>
+                                <span class="text-sm text-gray-700 text-bg">Сертифициран монтаж</span>
+                                <span class="text-sm text-gray-700 text-en hidden">Certified installation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-cog text-yellow-500 mr-3"></i>
+                                <span class="text-sm text-gray-700 text-bg">Оригинални части</span>
+                                <span class="text-sm text-gray-700 text-en hidden">Original parts</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-yellow-500 mr-3"></i>
+                                <span class="text-sm text-gray-700 text-bg">Обучен персонал</span>
+                                <span class="text-sm text-gray-700 text-en hidden">Trained staff</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-yellow-500 mr-3"></i>
+                                <span class="text-sm text-gray-700 text-bg">Гаранция 5 години</span>
+                                <span class="text-sm text-gray-700 text-en hidden">5-year warranty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 mt-8 lg:mt-0">
+                        <!-- Professional technician working on garage door -->
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Certified technician" class="rounded-lg shadow-lg w-full h-auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: About Section [company information] -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6 text-bg">За Delice Garage</h2>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6 text-en hidden">About Delice Garage</h2>
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="text-bg">
+                            С над 15 години опит в индустрията, Delice Garage е водещ доставчик на високококачествени гаражни врати в България. Като сертифициран партньор на Hörmann, ние предлагаме най-добрите продукти и услуги на пазара.
+                        </p>
+                        <p class="text-en hidden">
+                            With over 15 years of experience in the industry, Delice Garage is a leading provider of high-quality garage doors in Bulgaria. As a certified Hörmann partner, we offer the best products and services on the market.
+                        </p>
+                        <p class="text-bg">
+                            Нашият екип от сертифицирани специалисти е обучен да предоставя професионален монтаж и поддръжка, гарантирайки дълготрайна и безпроблемна работа на вратите Ви.
+                        </p>
+                        <p class="text-en hidden">
+                            Our team of certified specialists is trained to provide professional installation and maintenance, ensuring long-lasting and trouble-free operation of your doors.
+                        </p>
+                        <div class="mt-8 grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-2xl font-bold text-primary-blue">500+</div>
+                                <div class="text-sm text-gray-600 text-bg">Инсталирани врати</div>
+                                <div class="text-sm text-gray-600 text-en hidden">Installed doors</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary-blue">15+</div>
+                                <div class="text-sm text-gray-600 text-bg">Години опит</div>
+                                <div class="text-sm text-gray-600 text-en hidden">Years experience</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary-blue">100%</div>
+                                <div class="text-sm text-gray-600 text-bg">Доволни клиенти</div>
+                                <div class="text-sm text-gray-600 text-en hidden">Satisfied customers</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary-blue">24/7</div>
+                                <div class="text-sm text-gray-600 text-bg">Поддръжка</div>
+                                <div class="text-sm text-gray-600 text-en hidden">Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0">
+                    <!-- Modern office building exterior representing company headquarters -->
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Delice Garage team" class="rounded-lg shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Contact Section [contact form and information] -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 text-bg">Свържете се с нас</h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 text-en hidden">Contact Us</h2>
+                <p class="text-xl text-gray-600 text-bg">Готови сме да отговорим на всички Ваши въпроси</p>
+                <p class="text-xl text-gray-600 text-en hidden">We're ready to answer all your questions</p>
+            </div>
+
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                <!-- Contact Information -->
+                <div class="mb-12 lg:mb-0">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-bg">Информация за контакт</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-en hidden">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900 text-bg">Адрес</h4>
+                                <h4 class="text-lg font-medium text-gray-900 text-en hidden">Address</h4>
+                                <p class="text-gray-600" data-bind="company.address">
+                                    ул. "Индустриална" 15<br>
+                                    6000 Стара Загора, България
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900 text-bg">Телефон</h4>
+                                <h4 class="text-lg font-medium text-gray-900 text-en hidden">Phone</h4>
+                                <p class="text-gray-600">
+                                    <a href="tel:+359888123456" class="hover:text-primary-blue">+359 888 123 456</a>
+                                </p>
+                                <p class="text-gray-600">
+                                    <a href="tel:+35942123456" class="hover:text-primary-blue">+359 42 123 456</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Email</h4>
+                                <p class="text-gray-600">
+                                    <a href="mailto:info@delicegarage.bg" class="hover:text-primary-blue">info@delicegarage.bg</a>
+                                </p>
+                                <p class="text-gray-600">
+                                    <a href="mailto:service@delicegarage.bg" class="hover:text-primary-blue">service@delicegarage.bg</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900 text-bg">Работно време</h4>
+                                <h4 class="text-lg font-medium text-gray-900 text-en hidden">Working Hours</h4>
+                                <p class="text-gray-600 text-bg">
+                                    Понеделник - Петък: 8:00 - 18:00<br>
+                                    Събота: 9:00 - 14:00<br>
+                                    Неделя: Почивен ден
+                                </p>
+                                <p class="text-gray-600 text-en hidden">
+                                    Monday - Friday: 8:00 - 18:00<br>
+                                    Saturday: 9:00 - 14:00<br>
+                                    Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-bg">Изпратете заявка</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-en hidden">Send Request</h3>
+                    
+                    <form class="space-y-6" data-event="submit:handleContactForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2 text-bg">Име</label>
+                                <label class="block text-sm font-medium text-gray-700 mb-2 text-en hidden">Name</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary-blue focus:border-primary-blue" placeholder="Вашето име" data-placeholder-en="Your name" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2 text-bg">Телефон</label>
+                                <label class="block text-sm font-medium text-gray-700 mb-2 text-en hidden">Phone</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary-blue focus:border-primary-blue" placeholder="+359 888 123 456" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary-blue focus:border-primary-blue" placeholder="email@example.com" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2 text-bg">Услуга</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2 text-en hidden">Service</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary-blue focus:border-primary-blue">
+                                <option class="text-bg">Изберете услуга</option>
+                                <option class="text-bg" value="sectional">Секционни гаражни врати</option>
+                                <option class="text-bg" value="roller">Ролетни гаражни врати</option>
+                                <option class="text-bg" value="berry">Гаражни врати Berry</option>
+                                <option class="text-bg" value="service">Сервиз и поддръжка</option>
+                                <option class="text-bg" value="consultation">Консултация</option>
+                                <!-- English options (hidden by default) -->
+                                <option class="text-en hidden">Select service</option>
+                                <option class="text-en hidden" value="sectional">Sectional garage doors</option>
+                                <option class="text-en hidden" value="roller">Roller garage doors</option>
+                                <option class="text-en hidden" value="berry">Berry garage doors</option>
+                                <option class="text-en hidden" value="service">Service & maintenance</option>
+                                <option class="text-en hidden" value="consultation">Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2 text-bg">Съобщение</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2 text-en hidden">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary-blue focus:border-primary-blue" placeholder="Опишете Вашите нужди..." data-placeholder-en="Describe your needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-blue text-white py-4 px-6 rounded-md hover:bg-secondary-blue transition-colors duration-200 font-semibold">
+                            <span class="text-bg">Изпрати заявка</span>
+                            <span class="text-en hidden">Send Request</span>
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                    <!-- TODO: Implement form validation and submission logic -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer [site footer with links and info] -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4">
+                        <i class="fas fa-door-open mr-2 text-yellow-500"></i>
+                        Delice Garage
+                    </div>
+                    <p class="text-gray-400 mb-4 text-bg">
+                        Вашият надежден партньор за гаражни врати и автоматизация
+                    </p>
+                    <p class="text-gray-400 mb-4 text-en hidden">
+                        Your reliable partner for garage doors and automation
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 text-bg">Продукти</h3>
+                    <h3 class="text-lg font-semibold text-white mb-4 text-en hidden">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#sectional" class="text-gray-400 hover:text-white transition-colors text-bg">Секционни врати</a></li>
+                        <li><a href="#roller" class="text-gray-400 hover:text-white transition-colors text-bg">Ролетни врати</a></li>
+                        <li><a href="#berry" class="text-gray-400 hover:text-white transition-colors text-bg">Врати Berry</a></li>
+                        <li><a href="#sectional" class="text-gray-400 hover:text-white transition-colors text-en hidden">Sectional doors</a></li>
+                        <li><a href="#roller" class="text-gray-400 hover:text-white transition-colors text-en hidden">Roller doors</a></li>
+                        <li><a href="#berry" class="text-gray-400 hover:text-white transition-colors text-en hidden">Berry doors</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 text-bg">Услуги</h3>
+                    <h3 class="text-lg font-semibold text-white mb-4 text-en hidden">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-bg">Монтаж</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-bg">Сервиз</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-bg">Консултация</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-bg">Гаранция</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-en hidden">Installation</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-en hidden">Service</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-en hidden">Consultation</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors text-en hidden">Warranty</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 text-bg">Контакти</h3>
+                    <h3 class="text-lg font-semibold text-white mb-4 text-en hidden">Contact</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>6000 Стара Загора</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+359888123456" class="hover:text-white">+359 888 123 456</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:info@delicegarage.bg" class="hover:text-white">info@delicegarage.bg</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Delice Garage. <span class="text-bg">Всички права запазени.</span><span class="text-en hidden">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Language switcher functionality
+            const languageBtns = document.querySelectorAll('.language-btn');
+            const bgElements = document.querySelectorAll('.text-bg');
+            const enElements = document.querySelectorAll('.text-en');
+
+            function switchLanguage(lang) {
+                // Update button states
+                languageBtns.forEach(btn => {
+                    btn.classList.remove('active', 'bg-primary-blue', 'text-white');
+                    btn.classList.add('text-gray-600', 'hover:text-primary-blue');
+                });
+
+                const activeBtn = Array.from(languageBtns).find(btn => btn.textContent === lang);
+                if (activeBtn) {
+                    activeBtn.classList.add('active', 'bg-primary-blue', 'text-white');
+                    activeBtn.classList.remove('text-gray-600', 'hover:text-primary-blue');
+                }
+
+                // Show/hide content based on language
+                if (lang === 'BG') {
+                    bgElements.forEach(el => el.classList.remove('hidden'));
+                    enElements.forEach(el => el.classList.add('hidden'));
+                    document.documentElement.lang = 'bg';
+                } else {
+                    bgElements.forEach(el => el.classList.add('hidden'));
+                    enElements.forEach(el => el.classList.remove('hidden'));
+                    document.documentElement.lang = 'en';
+                }
+
+                // Update form placeholders
+                const placeholderElements = document.querySelectorAll('[data-placeholder-en]');
+                placeholderElements.forEach(el => {
+                    if (lang === 'EN' && el.getAttribute('data-placeholder-en')) {
+                        el.placeholder = el.getAttribute('data-placeholder-en');
+                    }
+                });
+            }
+
+            languageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    switchLanguage(this.textContent);
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('nav').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    // Close mobile menu if open
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Form submission handling (placeholder)
+            const contactForm = document.querySelector('form[data-event="submit:handleContactForm"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission logic
+                    alert('Form submission would be handled here in a real application');
+                });
+            }
+
+            // Initialize with Bulgarian language
+            switchLanguage('BG');
+        })();
+    </script>
+</body>
+</html>

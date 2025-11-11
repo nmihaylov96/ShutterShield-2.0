@@ -1,10 +1,9 @@
 import { useLanguage } from '@/contexts/language-context';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook } from 'lucide-react';
 import { useLocation } from 'wouter';
 
 export function Footer() {
   const { t } = useLanguage();
-
   const [, setLocation] = useLocation();
 
   return (
@@ -14,7 +13,8 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center text-2xl font-bold text-white mb-4">
-              <div className="w-8 h-8 bg-primary-blue flex items-center justify-center mr-3">
+              {/* 🔴 Лого с червен фон вместо син */}
+              <div className="w-8 h-8 bg-primary-blue flex items-center justify-center mr-3 rounded-md">
                 <span className="text-white font-bold text-lg">R</span>
               </div>
               RollTech
@@ -23,14 +23,13 @@ export function Footer() {
               {t.footer.tagline}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.facebook.com/Rolltech2021"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -42,7 +41,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => setLocation('/sectional-doors')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-accent-blue transition-colors"
                 >
                   {t.footer.sectionalShort}
                 </button>
@@ -50,17 +49,33 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => setLocation('/roller-doors')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-accent-blue transition-colors"
                 >
                   {t.footer.rollerShort}
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => setLocation('/berry-doors')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => setLocation('/automation')}
+                  className="text-gray-400 hover:text-accent-blue transition-colors text-left"
                 >
-                  {t.footer.berryShort}
+                  Автоматика
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setLocation('/industrial-doors')}
+                  className="text-gray-400 hover:text-accent-blue transition-colors text-left"
+                >
+                  Индустриални врати
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setLocation('/pedestrian-doors')}
+                  className="text-gray-400 hover:text-accent-blue transition-colors text-left"
+                >
+                  Пешеходни врати
                 </button>
               </li>
             </ul>
@@ -73,7 +88,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => setLocation('/services')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-accent-blue transition-colors"
                 >
                   {t.footer.installation}
                 </button>
@@ -81,7 +96,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => setLocation('/services')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-accent-blue transition-colors"
                 >
                   {t.footer.service}
                 </button>
@@ -89,7 +104,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => setLocation('/services')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-accent-blue transition-colors"
                 >
                   {t.footer.consultation}
                 </button>
@@ -97,7 +112,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => setLocation('/services')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-accent-blue transition-colors"
                 >
                   {t.footer.warranty}
                 </button>
@@ -115,11 +130,15 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <span className="mr-2">📞</span>
-                <a href="tel:+359876782271" className="hover:text-white">087 678 2271</a>
+                <a href="tel:+3590884098889" className="hover:text-accent-blue">
+                  088 409 8889
+                </a>
               </div>
               <div className="flex items-center">
                 <span className="mr-2">✉️</span>
-                <a href="mailto:rolltech2020@gmail.com" className="hover:text-white">rolltech2020@gmail.com</a>
+                <a href="mailto:rolltech2020@gmail.com" className="hover:text-accent-blue">
+                  contact@rolltech-doors.com
+                </a>
               </div>
             </div>
           </div>
@@ -127,7 +146,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 RollTech. {t.footer.copyright}</p>
+          <p>{t.footer.copyright}</p>
         </div>
       </div>
     </footer>
