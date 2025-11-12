@@ -157,7 +157,7 @@ export default function RollerDoors() {
         Секционни гаражни врати
       </h1>
       <p className="text-xl md:text-2xl mb-4 max-w-3xl mx-auto">
-        Фирма „Ролтех" ООД е оторизиран партньор с производителите на секционни врати от най-висок клас „MCA".
+        Секционните гаражни врати осигуряват стил, комфорт и сигурност за всеки дом.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -195,15 +195,8 @@ export default function RollerDoors() {
         {/* Text and logo side by side */}
         <div className="relative inline-flex items-center">
           <span className="bg-gray-50 px-6 text-4xl md:text-5xl font-bold text-gray-900">
-            Резиденциални врати MCA
+            Резиденциални врати
           </span>
-
-          {/* Logo positioned above the line */}
-          <img
-            src="src/components/img/logo.png"
-            alt="MCA Logo"
-            className="h-8 md:h-9 w-auto ml-0 -mt-10"
-          />
         </div>
       </div>
     </div>
@@ -211,9 +204,7 @@ export default function RollerDoors() {
     {/* Centered description */}
     <div className="max-w-3xl mx-auto text-center mb-16">
       <p className="text-lg text-gray-700 leading-relaxed">
-        Секционните врати, които предлагаме, са известни с удобството и сигурността си при употреба, 
-        елегантния дизайн, използването на най-новите технологии в съответствие с изискванията за безопасност 
-        на Европейския съюз. Те могат да бъдат изработени в разнообразие от размери и изисквания на клиента.
+Фирма „Ролтех" ООД е оторизиран партньор с производителите на секционни врати от най-висок клас „MCA".
       </p>
     </div>
 

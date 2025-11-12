@@ -16,6 +16,7 @@ import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
+  lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   phone: z.string().min(5, 'Phone must be at least 5 characters'),
   email: z.string().email('Please enter a valid email'),
   service: z.string().min(1, 'Please select a service'),
@@ -31,13 +32,14 @@ export function Contact() {
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: '',
-      phone: '',
-      email: '',
-      service: '',
-      message: '',
-    },
+defaultValues: {
+  name: '',
+  lastName: '',
+  phone: '',
+  email: '',
+  service: '',
+  message: '',
+},
   });
 
   const contactMutation = useMutation({
@@ -116,120 +118,140 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <Card className="bg-gray-50 p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.contact.form.title}</h3>
-            
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t.contact.form.name}</FormLabel>
-                        <FormControl>
-                          <Input placeholder={t.contact.form.namePlaceholder} {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t.contact.form.phone}</FormLabel>
-                        <FormControl>
-                          <Input type="tel" placeholder="+359 888 123 456" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t.contact.form.email}</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="email@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="service"
-                  render={({ field }) => (
+{/* Contact Form */}
+<Card className="bg-gray-50 p-8">
+  <h3 className="text-2xl font-bold text-gray-900 mb-6">
+    {t.contact.form.title}
+  </h3>
+
+  <Form {...form}>
+    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      {/* Име + Фамилия */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t.contact.form.name}</FormLabel>
+              <FormControl>
+                <Input placeholder={t.contact.form.namePlaceholder} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 <FormField
   control={form.control}
-  name="service"
+  name="lastName"
   render={({ field }) => (
     <FormItem>
-      <FormLabel>{t.contact.form.service}</FormLabel>
-      <Select onValueChange={field.onChange} defaultValue={field.value}>
-        <FormControl>
-          <SelectTrigger>
-            <SelectValue placeholder={t.contact.form.selectService} />
-          </SelectTrigger>
-        </FormControl>
-        <SelectContent>
-          <SelectItem value="sectional">{'Секционни гаражни врати'}</SelectItem>
-          <SelectItem value="roller">{'Ролетни гаражни врати'}</SelectItem>
-          <SelectItem value="pedestrian">{'Пешеходни врати'}</SelectItem>
-          <SelectItem value="industrial-sectional">{'Индустриални секционни врати'}</SelectItem>
-          <SelectItem value="industrial-roller">{'Индустриални ролетни врати'}</SelectItem>
-          <SelectItem value="automation-sectional">{'Автоматика за секционни врати'}</SelectItem>
-          <SelectItem value="automation-roller">{'Автоматика за ролетни врати'}</SelectItem>
-        </SelectContent>
-      </Select>
+      <FormLabel>{t.contact.form.lastName}</FormLabel>
+      <FormControl>
+        <Input placeholder="Фамилия" {...field} />
+      </FormControl>
       <FormMessage />
     </FormItem>
   )}
 />
+      </div>
 
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t.contact.form.message}</FormLabel>
-                      <FormControl>
-                        <Textarea rows={4} placeholder={t.contact.form.messagePlaceholder} {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <Button 
-                  type="submit" 
-                  className="w-full bg-primary-blue hover:bg-secondary-blue font-semibold text-lg h-12"
-                  disabled={contactMutation.isPending}
-                >
-                  {contactMutation.isPending ? (
-                    'Sending...'
-                  ) : (
-                    <>
-                      {t.contact.form.submit}
-                      <Send className="ml-2 h-5 w-5" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </Form>
-          </Card>
+      {/* Телефон + Имейл */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t.contact.form.phone}</FormLabel>
+              <FormControl>
+                <Input type="tel" placeholder="+359 888 123 456" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t.contact.form.email}</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder="email@example.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </div>
+
+      {/* Услуга */}
+      <FormField
+        control={form.control}
+        name="service"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{t.contact.form.service}</FormLabel>
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <FormControl>
+                <SelectTrigger>
+                  <SelectValue placeholder={t.contact.form.selectService} />
+                </SelectTrigger>
+              </FormControl>
+              <SelectContent>
+                <SelectItem value="sectional">{'Секционни гаражни врати'}</SelectItem>
+                <SelectItem value="roller">{'Ролетни гаражни врати'}</SelectItem>
+                <SelectItem value="pedestrian">{'Пешеходни врати'}</SelectItem>
+                <SelectItem value="industrial-sectional">{'Индустриални секционни врати'}</SelectItem>
+                <SelectItem value="industrial-roller">{'Индустриални ролетни врати'}</SelectItem>
+                <SelectItem value="automation-sectional">{'Автоматика за секционни врати'}</SelectItem>
+                <SelectItem value="automation-roller">{'Автоматика за ролетни врати'}</SelectItem>
+              </SelectContent>
+            </Select>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      {/* Съобщение */}
+      <FormField
+        control={form.control}
+        name="message"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{t.contact.form.message}</FormLabel>
+            <FormControl>
+              <Textarea
+                rows={4}
+                placeholder={t.contact.form.messagePlaceholder}
+                {...field}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      {/* Бутон за изпращане */}
+      <Button
+        type="submit"
+        className="w-full bg-primary-blue hover:bg-secondary-blue font-semibold text-lg h-12"
+        disabled={contactMutation.isPending}
+      >
+        {contactMutation.isPending ? (
+          'Изпраща се...'
+        ) : (
+          <>
+            {t.contact.form.submit}
+            <Send className="ml-2 h-5 w-5" />
+          </>
+        )}
+      </Button>
+    </form>
+  </Form>
+</Card>
+
         </div>
       </div>
     </section>

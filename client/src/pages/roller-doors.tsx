@@ -190,12 +190,6 @@ export default function RollerDoors() {
                   Ролетни гаражни врати
                 </span>
 
-                {/* Logo positioned above the line */}
-                <img
-                  src="src/components/img/logo.png"
-                  alt="Лого"
-                  className="h-8 md:h-9 w-auto ml-0 -mt-10"
-                />
               </div>
             </div>
           </div>
